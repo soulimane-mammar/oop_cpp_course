@@ -505,13 +505,13 @@ ClangFormat settings can be found in C++ extension settings.
 
 #### C/C++ include guard (proud contributor)
 
-is a [VSCode](#setting-up-vscode) extension that automatically add include guard for you so that you no longer need to remember it.
+is a [VSCode](#install-visual-studio-code) extension that automatically add include guard for you so that you no longer need to remember it.
 Download <a href="https://marketplace.visualstudio.com/items?itemName=akiramiyakoda.cppincludeguard" target="_blank">here</a>.
 
 <a name="include-info-proud-maker"></a>
 
 #### include-info (proud maker)
 
-is a [VSCode](#setting-up-vscode) extension that shows the included header file size
+is a [VSCode](#install-visual-studio-code) extension that shows the included header file size
 and provide a fast way to jump to those included files.
 Download <a href="https://marketplace.visualstudio.com/items?itemName=HO-COOH.include-info" target="_blank">here</a>
