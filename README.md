@@ -1,1 +1,1 @@
-# oop_cpp_course
+# Object Oriented Programming in C++
