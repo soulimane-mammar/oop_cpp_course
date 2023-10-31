@@ -1,47 +1,47 @@
-This section will step by step guide to the process of setting up a C++ development environment on a Debian/Ubuntu based distribution.
+This section is a step by step guide to the process of setting up a C++ development environment on a Debian/Ubuntu based distribution.
 
-- [Setting up development environment](#setting-up-development-environment)
+- [Setting up the development environment](#setting-up-the-development-environment)
   - [Updating system packages](#updating-system-packages)
-- [Install the build-essential package](#install-the-build-essential-package)
-- [Install CMake](#install-cmake)
-- [Git](#git)
-  - [Install Git](#install-git)
-- [IDEs](#ides)
-  - [Code::Blocks](#codeblocks)
-    - [Install using the APT package manager](#install-using-the-apt-package-manager)
-    - [Install using Flatpak](#install-using-flatpak)
-- [Text Editors](#text-editors)
-  - [Install Visual Studio Code](#install-visual-studio-code)
-    - [Install helper extensions](#install-helper-extensions)
-    - [Create a CMake project](#create-a-cmake-project)
-      - [Create a CMake hello world project](#create-a-cmake-hello-world-project)
-      - [Select a kit](#select-a-kit)
-    - [Configure Hello World](#configure-hello-world)
-      - [Select a variant](#select-a-variant)
-      - [CMake: Configure](#cmake-configure)
-    - [Build Hello World](#build-hello-world)
-- [Using libraries](#using-libraries)
-  - [vcpkg](#vcpkg)
-    - [Install vcpkg](#install-vcpkg)
-    - [Install libraries for your project](#install-libraries-for-your-project)
-    - [Using vcpkg with CMake](#using-vcpkg-with-cmake)
-- [Unit testing](#unit-testing)
-  - [Google Test (GTest)](#google-test-gtest)
-- [Addtional Tooling](#addtional-tooling)
-  - [ClangFormat](#clangformat)
-    - [Installing Clang-format](#installing-clang-format)
-    - [Configuring Clang-format](#configuring-clang-format)
-    - [Using Clang-format with VSCode](#using-clang-format-with-vscode)
-  - [C/C++ include guard (proud contributor)](#cc-include-guard-proud-contributor)
-  - [include-info (proud maker)](#include-info-proud-maker)
+  - [Install the build-essential package](#install-the-build-essential-package)
+  - [Install CMake](#install-cmake)
+  - [Git](#git)
+    - [Install Git](#install-git)
+  - [IDEs](#ides)
+    - [Code::Blocks](#codeblocks)
+      - [Install using the APT package manager](#install-using-the-apt-package-manager)
+      - [Install using Flatpak](#install-using-flatpak)
+  - [Text Editors](#text-editors)
+    - [Install Visual Studio Code](#install-visual-studio-code)
+      - [Install helper extensions](#install-helper-extensions)
+      - [Create a CMake project](#create-a-cmake-project)
+        - [Create a CMake hello world project](#create-a-cmake-hello-world-project)
+        - [Select a kit](#select-a-kit)
+      - [Configure Hello World](#configure-hello-world)
+        - [Select a variant](#select-a-variant)
+        - [CMake: Configure](#cmake-configure)
+      - [Build Hello World](#build-hello-world)
+  - [Using libraries](#using-libraries)
+    - [vcpkg](#vcpkg)
+      - [Install vcpkg](#install-vcpkg)
+      - [Install libraries for your project](#install-libraries-for-your-project)
+      - [Using vcpkg with CMake](#using-vcpkg-with-cmake)
+  - [Unit testing](#unit-testing)
+    - [Google Test (GTest)](#google-test-gtest)
+  - [Addtional Tooling](#addtional-tooling)
+    - [ClangFormat](#clangformat)
+      - [Installing Clang-format](#installing-clang-format)
+      - [Configuring Clang-format](#configuring-clang-format)
+      - [Using Clang-format with VSCode](#using-clang-format-with-vscode)
+    - [C/C++ include guard (proud contributor)](#cc-include-guard-proud-contributor)
+    - [include-info (proud maker)](#include-info-proud-maker)
 
-<a name="setting-up-development-environment"></a>
+<a name="setting-up-the-development-environment"></a>
 
-### Setting up development environment
+## Setting up the development environment
 
 <a name="updating-system-packages"></a>
 
-#### Updating system packages
+### Updating system packages
 
 Open a terminal and type the following commands
 
