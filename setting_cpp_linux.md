@@ -50,8 +50,8 @@ sudo apt upate
 sudo apt upgrade -y
 ```
 
-![](screenshots/Linux/apt_update.png)
-![](screenshots/Linux/apt_upgrade.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/apt_update.png?raw=true)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/apt_upgrade.png?raw=true)
 
 <a name="install-the-build-essential-package"></a>
 
@@ -72,7 +72,7 @@ To install the build-essential package type the following command
 sudo apt install build-essential -y
 ```
 
-![](screenshots/Linux/build_essential.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/build_essential.png?raw=true)
 
 <a name="install-cmake"></a>
 
@@ -85,7 +85,7 @@ To install CMake type the following command
 sudo apt install cmake -y
 ```
 
-![](screenshots/Linux/cmake.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake.png?raw=true)
 
 <a name="git"></a>
 
@@ -122,7 +122,7 @@ The best way to install CodeBlocks on a Debian/Ubuntu based system is to use its
 sudo apt install codeblocks
 ```
 
-![](screenshots/Linux/codeblocks.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/codeblocks.png?raw=true)
 
 To have more features through this IDE you can install some additional plugins available through the packages called codeblocks-contrib.
 
@@ -130,7 +130,7 @@ To have more features through this IDE you can install some additional plugins a
 sudo apt install codeblocks-contrib
 ```
 
-![](screenshots/Linux/codeblocks_contrib.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/codeblocks_contrib.png?raw=true)
 
 ##### Install using Flatpak
 
@@ -158,7 +158,7 @@ Now, run the given command to install the Code::block IDE on the system.
 flatpak install flathub org.codeblocks.codeblocks
 ```
 
-![](screenshots/Linux/code_blocks_flatpak.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/code_blocks_flatpak.png?raw=true)
 
 Run Code::Block
 
@@ -166,7 +166,7 @@ Run Code::Block
 codeblocks &
 ```
 
-![](screenshots/Linux/codeblocs_ide.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/codeblocs_ide.png?raw=true)
 
 <a name="text-editors"></a>
 
@@ -232,19 +232,19 @@ Create a folder for a new project. From the Terminal window, create an empty fol
 ###### Create a CMake hello world project
 
 The CMake Tools extension can create the files for a basic CMake project for you. Open the Command Palette (`Ctrl+Shift+P`) and run the CMake: Quick Start command:
-![](screenshots/Linux/cmake-quickstart-command-palette.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-quickstart-command-palette.png?raw=true)
 
 Enter a project name. This will be written to `CMakeLists.txt` and a few initial source files.
 
 Next, select **Executable** as the project type to create a basic source file (`main.cpp`) that includes a basic `main()` function.
 
-![](screenshots/Linux/cmake-choose-type.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-choose-type.png?raw=true)
 
 >**_NOTE_** If you had wanted to create a basic source and header file, you would have selected **Library** instead. But for this tutorial, **Executable** will do. If you are prompted to configure IntelliSense for the folder, select **Allow**.
 
 This creates a hello world CMake project containing `main.cpp`, `CMakeLists.txt` (which tells the CMake tools how to build your project), and a folder named `build` for your build files:
 
-![](screenshots/Linux/cmake-project-contents.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-project-contents.png?raw=true)
 
 <a name="select-a-kit"></a>
 
@@ -255,7 +255,7 @@ Before you can use the CMake Tools extension to build a project, you need to con
 1. Open the Command Palette (`Ctrl+Shift+P`) and run CMake: Select a Kit. The extension will automatically scan for kits on your computer and create a list of compilers found on your system.
 2. Select the compiler you want to use. For example, depending on the compilers you have installed, you might see something like:
 
-![](screenshots/Linux/cmake-selectkit.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-selectkit.png?raw=true)
 
 <a name="configure-hello-world"></a>
 
@@ -264,7 +264,7 @@ Before you can use the CMake Tools extension to build a project, you need to con
 There are two things you must do to configure your CMake project: select a kit (which you just did) and select a variant.
 
 The kit you selected previously is shown in the Status bar. For example:
-![](screenshots/Linux/cmake-kit-statusbar.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-kit-statusbar.png?raw=true)
 
 To change the kit, you can click on the kit in the Status bar, or run the **CMake: Select a kit** command again from the Command Palette. If you don't see the compiler you're looking for, you can edit the `cmake-tools-kits.json` file in your project. To edit the file, open the Command Palette (`Ctrl+Shift+P`) and run the **CMake: Edit User-Local CMake Kits** command.
 
@@ -280,10 +280,10 @@ A variant contains instructions for how to build your project. By default, the C
 `RelWithDebInfo` : Optimizes for speed and includes debug info.
 
 To select a variant, open the Command Palette (`Ctrl+Shift+P`) run the CMake: Select Variant command.
-![](screenshots/Linux/cmake-select-variant.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-select-variant.png?raw=true)
 
 Select **Debug** to include debug information with your build.
-![](screenshots/Linux/cmake-variant-type.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-variant-type.png?raw=true)
 The selected variant will appear in the Status bar next to the active kit.
 
 <a name="cmake-configure"></a>
@@ -297,7 +297,7 @@ Now that you've selected a kit and a variant, open the Command Palette (`Ctrl+Sh
 ##### Build Hello World
 
 To run and debug your project, open `main.cpp` and put a breakpoint on the `std::cout` line. Then open the Command Palette (`Ctrl+Shift+P`) and run **CMake: Debug**. The debugger will stop on the `std::cout` line:
-![](screenshots/Linux/cmake-debug.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-debug.png?raw=true)
 Go ahead and press `F5` to continue.
 
 <a name="using-libraries"></a>
