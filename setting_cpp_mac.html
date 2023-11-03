@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>setting_cpp_linux</title>
+      <title>setting_cpp_mac</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -24,32 +24,29 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p>This section is a step by step guide to the process of setting up a C++ development environment on a Debian/Ubuntu based distribution.</p>
 <ul>
 <li><a href="#setting-up-the-development-environment">Setting up the development environment</a>
 <ul>
-<li><a href="#updating-system-packages">Updating system packages</a></li>
-<li><a href="#install-the-build-essential-package">Install the build-essential package</a></li>
+<li><a href="#install-xcode">Install Xcode</a></li>
+<li><a href="#install-the--xcode-command-line-tools">Install the  Xcode command line tools</a></li>
+<li><a href="#install-gcc">Install GCC</a></li>
 <li><a href="#install-cmake">Install CMake</a></li>
 <li><a href="#git">Git</a>
 <ul>
-<li><a href="#install-git">Install Git</a></li>
-</ul>
-</li>
-<li><a href="#ides">IDEs</a>
+<li><a href="#install-git">Install Git</a>
 <ul>
-<li><a href="#codeblocks">Code::Blocks</a>
-<ul>
-<li><a href="#install-using-the-apt-package-manager">Install using the APT package manager</a></li>
-<li><a href="#install-using-flatpak">Install using Flatpak</a></li>
+<li><a href="#git-for-mac-installer">Git for Mac Installer</a></li>
+<li><a href="#install-git-with-homebrew">Install Git with Homebrew</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a href="#text-editors">Text Editors</a>
 <ul>
-<li><a href="#install-visual-studio-code">Install Visual Studio Code</a>
+<li><a href="#visual-studio-code">Visual Studio Code</a>
 <ul>
+<li><a href="#install-visual-studio-code">Install Visual Studio Code</a></li>
+<li><a href="#launching-from-the-command-line">Launching from the command line</a></li>
 <li><a href="#install-helper-extensions">Install helper extensions</a></li>
 <li><a href="#create-a-cmake-project">Create a CMake project</a>
 <ul>
@@ -83,7 +80,7 @@
 <ul>
 <li><a href="#google-test-gtest">Google Test (GTest)</a>
 <ul>
-<li><a href="#installing-gtest">Installing GTest</a></li>
+<li><a href="#build-and-install-gtest">Build and install GTest</a></li>
 <li><a href="#using-gtest">Using GTest</a></li>
 </ul>
 </li>
@@ -107,85 +104,135 @@
 </ul>
 <p><a name="setting-up-the-development-environment" href=""></a></p>
 <h2 id="setting-up-the-development-environment">Setting up the development environment </h2>
-<p><a name="updating-system-packages" href=""></a></p>
-<h3 id="updating-system-packages">Updating system packages </h3>
-<p>Open a terminal and type the following commands</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> upate
-<span class="token function">sudo</span> <span class="token function">apt</span> upgrade <span class="token parameter variable">-y</span>
-</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/apt_update.png?raw=true" alt=""><br>
-<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/apt_upgrade.png?raw=true" alt=""></p>
-<p><a name="install-the-build-essential-package" href=""></a></p>
-<h3 id="install-the-build-essential-package">Install the build-essential package </h3>
-<p>The build-essentials packages are the form of meta-packages that are essential to compile software. They contain the GNU/g++ compiler collection, GNU debugger, and a few more libraries and tools that are needed for compiling a program. A few other packages, like GCC, make, G++, dpkg-dev, etc., are also installed on our system when we install the build-essential packages.<br>
-This meta-package contains five different packages that are important to compile software on Debian/Ubuntu.</p>
-<ul>
-<li><strong>g++</strong>: It is a GNU compiler for C++ language.</li>
-<li><strong>gcc</strong>: It is a GNU compiler for C language.</li>
-<li><strong>make</strong>: It is a helpful utility that is used to direct the program's compilation. The tool, i.e., make, interprets a file known as "makefile" that can guide the compiler on how to operate.</li>
-<li><strong>libc6-dev</strong>: It is a GNU C library. It includes the header files and development directories used for compiling general C++ and C scripts.</li>
-<li><strong>dpkg-dev</strong>: This package is used to upload, build, and unpack Debian source packages. It is helpful if we wish to package our application for a Debian-based system.</li>
-</ul>
-<p>To install the build-essential package type the following command</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> build-essential <span class="token parameter variable">-y</span>
-</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/build_essential.png?raw=true" alt=""></p>
+<p>Setting up a C++ development environment on macOS can be done in many ways:</p>
+<ol>
+<li>Install Xcode</li>
+<li>Install the Xcode Command Line Tools and use any preferred IDE or Code Editor for writing C or C++ code</li>
+<li>Install GCC instead of Clang (shipped with Xcode)</li>
+</ol>
+<p><a name="install-xcode" href=""></a></p>
+<h3 id="install-xcode">Install Xcode </h3>
+<p>The Xcode development environment includes the Clang C/C++ compiler and various development tools. You can install it from the Mac App Store:</p>
+<ol>
+<li>Open the Mac App Store.</li>
+<li>Search for "Xcode."</li>
+<li>Click the "Install" button next to Xcode.</li>
+</ol>
+<p>You will need to agree to the license terms and download the necessary components.<br>
+<img src="screenshots/macOS/xcode_welcome.jpeg" alt=""></p>
+<p>The next step is to click on “Create a new Xcode project”.<br>
+If you have an existing project you will click on “Open a project or file” or “Clone an existing project” if the project is on source control.<br>
+Next, click on the macOS tab and then click on the Command-Line app as it is the only thing where we can develop apps in C and C++</p>
+<p><img src="screenshots/macOS/xcode_create_project.jpeg" alt=""></p>
+<p>It will now show an interface to give the app a name and the package name. After giving that name there would be a drop-down to select a language. So, instead of swift, you can select C or C++ and click Next</p>
+<p><img src="screenshots/macOS/xcode_select_language.jpeg" alt=""></p>
+<p>Then it will ask for the location of the project on your machine<br>
+Then, you can open or create a C or C++ file and start editing it</p>
+<p><img src="screenshots/macOS/xcode_editing_project.jpeg" alt=""></p>
+<p><a name="install-the--xcode-command-line-tools" href=""></a></p>
+<h3 id="install-the--xcode-command-line-tools">Install the  Xcode command line tools </h3>
+<p>For command-line development, we can install the command line tools separately by running this command on the terminal</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>xcode-select <span class="token parameter variable">--install</span>
+</code></pre><p><img src="screenshots/macOS/xcode_cli_tools.png" alt=""></p>
+<p><a name="install-gcc" href=""></a></p>
+<h3 id="install-gcc">Install GCC </h3>
+<p>macOS comes with the Clang C/C++ compiler included with Xcode. You can check its version and ensure it's installed by running</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>clang++ <span class="token parameter variable">--version</span>
+</code></pre><p>If you prefer using GCC, you can install it using Homebrew</p>
+<p><a name="install-homebrew" href=""></a></p>
+<ol>
+<li>
+<p>Install Homebrew (if not already installed)</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>/bin/bash <span class="token parameter variable">-c</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">curl</span> <span class="token parameter variable">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="token variable">)</span></span>"</span>
+</code></pre></li>
+<li>
+<p>Install GCC</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>brew <span class="token function">install</span> gcc
+</code></pre></li>
+</ol>
 <p><a name="install-cmake" href=""></a></p>
 <h3 id="install-cmake">Install CMake </h3>
 <p>CMake is an open-source, cross-platform tool that uses compiler and platform independent configuration files to generate native build tool files specific to your compiler and platform.<br>
-To install CMake type the following command</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> cmake <span class="token parameter variable">-y</span>
-</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake.png?raw=true" alt=""></p>
+CMake can be installed on Mac using brew</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>brew <span class="token function">install</span> cmake
+</code></pre><p>or by downloading the binaries unpacking them manually to any location:</p>
+<pre data-role="codeBlock" data-info="" class="language-text text"><code>wget https://cmake.org/files/v3.4/cmake-3.4.1-Darwin-x86_64.tar.gz
+tar xf cmake-3.4.1-Darwin-x86_64.tar.gz
+export PATH="`pwd`/cmake-3.4.1-Darwin-x86_64/CMake.app/Contents/bin:$PATH"
+</code></pre><p>or by downloading the DMG installer from <a href="https://cmake.org/download/" target="_blank"> Download page </a></p>
+<p><img src="screenshots/macOS/cmake_dmg_installer.png" alt=""><br>
+<img src="screenshots/macOS/cmake_app.png" alt=""></p>
 <p><a name="git" href=""></a></p>
 <h3 id="git">Git </h3>
 <p><a nme="install-git" href=""></a></p>
 <h4 id="install-git">Install Git </h4>
-<p>The easiest way to install Git on a Debian/Ubuntu based system is to use its native package manager APT.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">apt</span> <span class="token function">install</span> <span class="token function">git</span>
-</code></pre><p><a name="ides" href=""></a></p>
-<h3 id="ides">IDEs </h3>
-<p>Linux provides a wealth of options for C++ Integrated Development Environments (IDEs), allowing you to choose the tool that best suits your needs. Popular choices include Code::Blocks, Eclipse, and CLion.<br>
-In the following we'll explore the process of setting up <strong>Code::Blocs</strong></p>
-<p><a name="code-blocs" href=""></a></p>
-<h4 id="codeblocks">Code::Blocks </h4>
-<p>Code::Blocks is a free C/C++ and Fortran IDE built to meet the most demanding needs of its users. It is designed to be very extensible and fully configurable.</p>
-<h5 id="install-using-the-apt-package-manager">Install using the APT package manager </h5>
-<p>The best way to install CodeBlocks on a Debian/Ubuntu based system is to use its native package manager APT.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> codeblocks
-</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/codeblocks.png?raw=true" alt=""></p>
-<p>To have more features through this IDE you can install some additional plugins available through the packages called codeblocks-contrib.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> codeblocks-contrib
-</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/codeblocks_contrib.png?raw=true" alt=""></p>
-<h5 id="install-using-flatpak">Install using Flatpak </h5>
-<p>If the above-given method is not working for you then use the Flatpak. It is a universal package manager that we can use to easily install using the default system repository of Ubuntu 22.04 or 20.04.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> flatpak
-</code></pre><p>After installing the Flatpak, add its FlatHub repository as well.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-</code></pre><p>Once you have added the repo, restart your PC to integrate the Flatpak properly into the system.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">reboot</span>
-</code></pre><p>Now, run the given command to install the Code::block IDE on the system.</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>flatpak <span class="token function">install</span> flathub org.codeblocks.codeblocks
-</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/code_blocks_flatpak.png?raw=true" alt=""></p>
-<p>Run Code::Block</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>codeblocks <span class="token operator">&amp;</span>
-</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/codeblocs_ide.png?raw=true" alt=""></p>
-<p><a name="text-editors" href=""></a></p>
+<p>There are several ways to install Git on a Mac. In fact, if you've installed XCode (or it's Command Line Tools), Git may already be installed. To find out, open a terminal and enter <code>git --version.</code></p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">git</span> <span class="token parameter variable">--version</span>
+<span class="token function">git</span> version <span class="token number">2.7</span>.0 <span class="token punctuation">(</span>Apple Git-66<span class="token punctuation">)</span>
+</code></pre><p>Apple actually maintain and ship their own fork of Git, but it tends to lag behind mainstream Git by several major versions. You may want to install a newer version of Git using one of the methods below</p>
+<p><a name="git-for-mac-installer" href=""></a></p>
+<h5 id="git-for-mac-installer">Git for Mac Installer </h5>
+<p>The easiest way to install Git on a Mac is via the stand-alone installer:</p>
+<ol>
+<li>
+<p>Download the latest <a href="https://sourceforge.net/projects/git-osx-installer/files/" target="_blank">Git for Mac installer.</a></p>
+</li>
+<li>
+<p>Follow the prompts to install Git.</p>
+</li>
+<li>
+<p>Open a terminal and verify the installation was successful by typing <code>git --version</code></p>
+</li>
+<li>
+<p>Configure your Git username and email using the following commands, replacing Soulimane's name with your own. These details will be associated with any commits that you create</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name <span class="token string">"Soulimane MAMMAR"</span>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email <span class="token string">"soulimane.mammar@gmail.com"</span>
+</code></pre></li>
+</ol>
+<p><a name="install-git-with-homebrew" href=""></a></p>
+<h5 id="install-git-with-homebrew">Install Git with Homebrew </h5>
+<p>If you have <a href="#install-homebrew">installed Homebrew</a> to manage packages on OS X, you can install Git by issuing the following command:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>brew <span class="token function">install</span> <span class="token function">git</span>
+</code></pre><p><a name="text-editors" href=""></a></p>
 <h3 id="text-editors">Text Editors </h3>
-<p>There is a wealth of choices in text editors for C++ develpment that support advanced features such as code completion and name refactoring. To name just a few, we have:</p>
+<p>There is a wealth of choices in text editors for C++ development that support advanced features such as code completion and name refactoring. To name just a few, we have:</p>
 <ul>
 <li>Atom</li>
 <li>Visual Studio Code</li>
-<li>Subime Text</li>
+<li>Sublime Text</li>
 <li>Vim</li>
 </ul>
-<p><a name="install-visual-studio-code" href=""></a></p>
-<h4 id="install-visual-studio-code">Install Visual Studio Code </h4>
+<p><a name="visual-studio-code" href=""></a></p>
+<h4 id="visual-studio-code">Visual Studio Code </h4>
 <p>Visual Studio Code is probably one of the best choices for beginners today. It has a nice UI, offers some basic IDE features like completion and jumping to definitions</p>
-<p>The easiest way to install Visual Studio Code for Debian/Ubuntu based distributions is to download and install the <a href="https://go.microsoft.com/fwlink/?LinkID=760868" class="external-link" target="_blank">.deb package (64-bit)</a>, either through the graphical software center if it's available, or through the command line with:</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> ./<span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>.deb
-</code></pre><p>Visual Studio Code is also officially distributed as a Snap package in the Snap Store and you can install it by running</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> snap <span class="token function">install</span> <span class="token parameter variable">--classic</span> code
-</code></pre><p>Using Fatpak is another way to install Visual Studio Code</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>flatpak <span class="token function">install</span> flathub com.visualstudio.code
-</code></pre><p><a name="install-helper-extensions" href=""></a></p>
+<p><a name="install-visual-studio-code" href=""></a></p>
+<h5 id="install-visual-studio-code">Install Visual Studio Code </h5>
+<p>You can install VSCode with Homebrew</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>brew <span class="token function">install</span> <span class="token parameter variable">--cask</span> visual-studio-code
+</code></pre><p>or</p>
+<ol>
+<li><a href="https://go.microsoft.com/fwlink/?LinkID=534106" target="_blank">Download Visual Studio Code</a> for macOS.</li>
+<li>Open the browser's download list and locate the downloaded app or archive.</li>
+<li>If archive, extract the archive contents.</li>
+<li>Drag <code>Visual Studio Code.app</code> to the <strong>Applications</strong> folder, making it available in the macOS Launchpad.</li>
+<li>Open VS Code from the <strong>Applications</strong> folder, by double clicking the icon.</li>
+<li>Add VS Code to your Dock by right-clicking on the icon, located in the Dock, to bring up the context menu and choosing <strong>Options</strong>, <strong>Keep in Dock</strong>.</li>
+</ol>
+<p><a name="launching-from-the-command-line" href=""></a></p>
+<h5 id="launching-from-the-command-line">Launching from the command line </h5>
+<p>You can also run VS Code from the terminal by typing 'code' after adding it to the path:</p>
+<ul>
+<li>Launch VS Code.</li>
+<li>Open the <strong>Command Palette</strong> (<code>Cmd+Shift+P</code>) and type 'shell command' to find the <strong>Shell Command: Install 'code' command in PATH</strong> command.</li>
+</ul>
+<p><img src="screenshots/macOS/vscode_shell_command.png" alt=""></p>
+<ul>
+<li>Restart the terminal for the new <code>$PATH</code> value to take effect. You'll be able to type 'code .' in any folder to start editing files in that folder.</li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> If you still have the old <code>code</code> alias in your <code>.bash_profile</code> (or equivalent) from an early VS Code version, remove it and replace it by executing the <strong>Shell Command: Install 'code' command in PATH</strong> command.</p>
+</blockquote>
+<p><a name="install-helper-extensions" href=""></a></p>
 <h5 id="install-helper-extensions">Install helper extensions </h5>
 <p>Install <code>Microsoft C/C++</code> extension, It is a Language Server by Microsoft.<br>
 <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Editor/VSCode/Extension_Cpp.png?raw=true" alt=""></p>
@@ -200,7 +247,7 @@ code <span class="token builtin class-name">.</span>
 </code></pre><p>The <code>code .</code> command opens VS Code in the current working folder, which becomes your "workspace".</p>
 <p><a name="create-a-cmake-hello-world-project" href=""></a></p>
 <h6 id="create-a-cmake-hello-world-project">Create a CMake hello world project </h6>
-<p>The CMake Tools extension can create the files for a basic CMake project for you. Open the Command Palette (<code>Ctrl+Shift+P</code>) and run the CMake: Quick Start command:<br>
+<p>The CMake Tools extension can create the files for a basic CMake project for you. Open the Command Palette (<code>Cmd+Shift+P</code>) and run the CMake: Quick Start command:<br>
 <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-quickstart-command-palette.png?raw=true" alt=""></p>
 <p>Enter a project name. This will be written to <code>CMakeLists.txt</code> and a few initial source files.</p>
 <p>Next, select <strong>Executable</strong> as the project type to create a basic source file (<code>main.cpp</code>) that includes a basic <code>main()</code> function.</p>
@@ -214,7 +261,7 @@ code <span class="token builtin class-name">.</span>
 <h6 id="select-a-kit">Select a kit </h6>
 <p>Before you can use the CMake Tools extension to build a project, you need to configure it to know about the compilers on your system. Do that by scanning for 'kits'. A kit represents a toolchain, which is the compiler, linker, and other tools used to build your project. To scan for kits:</p>
 <ol>
-<li>Open the Command Palette (<code>Ctrl+Shift+P</code>) and run CMake: Select a Kit. The extension will automatically scan for kits on your computer and create a list of compilers found on your system.</li>
+<li>Open the Command Palette (<code>Cmd+Shift+P</code>) and run CMake: Select a Kit. The extension will automatically scan for kits on your computer and create a list of compilers found on your system.</li>
 <li>Select the compiler you want to use. For example, depending on the compilers you have installed, you might see something like:</li>
 </ol>
 <p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-selectkit.png?raw=true" alt=""></p>
@@ -241,7 +288,7 @@ The selected variant will appear in the Status bar next to the active kit.</p>
 <p>Now that you've selected a kit and a variant, open the Command Palette (<code>Ctrl+Shift+P</code>) and run the <strong>CMake: Configure</strong> command to configure your project. This generates build files in the project's build folder using the kit and variant you selected.</p>
 <p><a name="build-hello-world" href=""></a></p>
 <h5 id="build-hello-world">Build Hello World </h5>
-<p>To run and debug your project, open <code>main.cpp</code> and put a breakpoint on the <code>std::cout</code> line. Then open the Command Palette (<code>Ctrl+Shift+P</code>) and run <strong>CMake: Debug</strong>. The debugger will stop on the <code>std::cout</code> line:<br>
+<p>To run and debug your project, open <code>main.cpp</code> and put a breakpoint on the <code>std::cout</code> line. Then open the Command Palette (<code>Cmd+Shift+P</code>) and run <strong>CMake: Debug</strong>. The debugger will stop on the <code>std::cout</code> line:<br>
 <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/cmake-debug.png?raw=true" alt=""><br>
 Go ahead and press <code>F5</code> to continue.</p>
 <p><a name="using-libraries" href=""></a></p>
@@ -271,17 +318,17 @@ first, clone the repo,</p>
 <p><a name="google-test-gtest" href=""></a></p>
 <h4 id="google-test-gtest">Google Test (GTest) </h4>
 <p>Google test is a framework for writing C++ unit tests.</p>
-<p><a name="installing-gtest" href=""></a></p>
-<h5 id="installing-gtest">Installing GTest </h5>
-<p>Start by installing the gtest development package</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libgtest-dev
-</code></pre><p>Note that this package only install source files. You have to compile the code yourself to create the necessary library files. These source files should be located at /usr/src/gtest. Browse to this folder and use cmake to compile the library</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token builtin class-name">cd</span> /usr/src/gtest
-<span class="token function">sudo</span> cmake CMakeLists.txt
-<span class="token function">sudo</span> <span class="token function">make</span>
- 
-<span class="token comment"># copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder</span>
-<span class="token function">sudo</span> <span class="token function">cp</span> *.a /usr/lib
+<p><a name="build-and-install-gtest" href=""></a></p>
+<h5 id="build-and-install-gtest">Build and install GTest </h5>
+<p>GoogleTest comes with a CMake build script (CMakeLists.txt) that can be used on a wide range of platforms ("C" stands for cross-platform.).<br>
+To build and install GoogleTest as a standalone project, issue the following command on the terminal</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">git</span> clone https://github.com/google/googletest.git <span class="token parameter variable">-b</span> v1.14.0
+<span class="token builtin class-name">cd</span> googletest        <span class="token comment"># Main directory of the cloned repository.</span>
+<span class="token function">mkdir</span> build          <span class="token comment"># Create a directory to hold the build output.</span>
+<span class="token builtin class-name">cd</span> build
+cmake <span class="token punctuation">..</span>             <span class="token comment"># Generate native build scripts for GoogleTest.</span>
+<span class="token function">make</span>
+<span class="token function">sudo</span> <span class="token function">make</span> <span class="token function">install</span>    <span class="token comment"># Install in /usr/local/ by default</span>
 </code></pre><p><a name="using-gtest" href=""></a></p>
 <h5 id="using-gtest">Using GTest </h5>
 <p>Lets say we now want to test the following simple squareRoot function</p>

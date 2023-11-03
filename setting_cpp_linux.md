@@ -27,6 +27,8 @@ This section is a step by step guide to the process of setting up a C++ developm
       - [Using vcpkg with CMake](#using-vcpkg-with-cmake)
   - [Unit testing](#unit-testing)
     - [Google Test (GTest)](#google-test-gtest)
+      - [Installing GTest](#installing-gtest)
+      - [Using GTest](#using-gtest)
   - [Addtional Tooling](#addtional-tooling)
     - [ClangFormat](#clangformat)
       - [Installing Clang-format](#installing-clang-format)
@@ -45,7 +47,7 @@ This section is a step by step guide to the process of setting up a C++ developm
 
 Open a terminal and type the following commands
 
-```
+```bash
 sudo apt upate
 sudo apt upgrade -y
 ```
@@ -68,7 +70,7 @@ This meta-package contains five different packages that are important to compile
 
 To install the build-essential package type the following command
 
-```
+```bash
 sudo apt install build-essential -y
 ```
 
@@ -81,7 +83,7 @@ sudo apt install build-essential -y
 CMake is an open-source, cross-platform tool that uses compiler and platform independent configuration files to generate native build tool files specific to your compiler and platform.
 To install CMake type the following command
 
-```
+```bash
 sudo apt install cmake -y
 ```
 
@@ -97,7 +99,7 @@ sudo apt install cmake -y
 
 The easiest way to install Git on a Debian/Ubuntu based system is to use its native package manager APT.
 
-```
+```bash
 apt install git
 ```
 
@@ -118,7 +120,7 @@ Code::Blocks is a free C/C++ and Fortran IDE built to meet the most demanding ne
 
 The best way to install CodeBlocks on a Debian/Ubuntu based system is to use its native package manager APT.
 
-```
+```bash
 sudo apt install codeblocks
 ```
 
@@ -126,7 +128,7 @@ sudo apt install codeblocks
 
 To have more features through this IDE you can install some additional plugins available through the packages called codeblocks-contrib.
 
-```
+```bash
 sudo apt install codeblocks-contrib
 ```
 
@@ -136,25 +138,25 @@ sudo apt install codeblocks-contrib
 
 If the above-given method is not working for you then use the Flatpak. It is a universal package manager that we can use to easily install using the default system repository of Ubuntu 22.04 or 20.04.
 
-```
+```bash
 sudo apt install flatpak
 ```
 
 After installing the Flatpak, add its FlatHub repository as well.
 
-```
+```bash
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 
 Once you have added the repo, restart your PC to integrate the Flatpak properly into the system.
 
-```
+```bash
 sudo reboot
 ```
 
 Now, run the given command to install the Code::block IDE on the system.
 
-```
+```bash
 flatpak install flathub org.codeblocks.codeblocks
 ```
 
@@ -162,7 +164,7 @@ flatpak install flathub org.codeblocks.codeblocks
 
 Run Code::Block
 
-```
+```bash
 codeblocks &
 ```
 
@@ -187,19 +189,19 @@ Visual Studio Code is probably one of the best choices for beginners today. It h
 
 The easiest way to install Visual Studio Code for Debian/Ubuntu based distributions is to download and install the <a href="https://go.microsoft.com/fwlink/?LinkID=760868" class="external-link" target="_blank">.deb package (64-bit)</a>, either through the graphical software center if it's available, or through the command line with:
 
-```
+```bash
 sudo apt install ./<file>.deb
 ```
 
 Visual Studio Code is also officially distributed as a Snap package in the Snap Store and you can install it by running
 
-```
+```bash
 sudo snap install --classic code
 ```
 
 Using Fatpak is another way to install Visual Studio Code
 
-```
+```bash
 flatpak install flathub com.visualstudio.code
 ```
 
@@ -219,7 +221,7 @@ Install two extensions for cmake. The first one (from twxs) in the list is for s
 
 Create a folder for a new project. From the Terminal window, create an empty folder called cmakeQuickStart, navigate into it, and open VS Code in that folder by entering the following commands:
 
-   ```
+   ```bash
    mkdir cmakeQuickStart
    cd cmakeQuickStart
    code .
@@ -317,13 +319,13 @@ vcpkg is a free C/C++ package manager for acquiring and managing libraries. It a
 Installing vcpkg is a two-step process:
 first, clone the repo,
 
-```
+```bash
 git clone https://github.com/Microsoft/vcpkg.git
 ```
 
 then run the bootstrapping script to produce the vcpkg binary.
 
-```
+```bash
 ./vcpkg/bootstrap-vcpkg.sh
 ```
 
@@ -331,7 +333,7 @@ then run the bootstrapping script to produce the vcpkg binary.
 
 ##### Install libraries for your project
 
-```
+```bash
 vcpkg install [packages to install]
 ```
 
@@ -341,13 +343,13 @@ vcpkg install [packages to install]
 
 In order to use vcpkg with CMake outside of an IDE, you can use the toolchain file:
 
-```
+```bash
  cmake -B [build directory] -S . -DCMAKE_TOOLCHAIN_FILE=[path to vcpkg]/scripts/buildsystems/vcpkg.cmake 
 ```
 
 Then build with:
 
-```
+```bash
 cmake --build [build directory]
 ```
 
@@ -361,16 +363,21 @@ With CMake, you will need to find_package() to reference the libraries in your `
 
 #### Google Test (GTest)
 
-Google test is a framework for writing C++ unit tests. In the following, I explain how to set it up.
+Google test is a framework for writing C++ unit tests.
+
+<a name="installing-gtest"></a>
+
+##### Installing GTest
+
 Start by installing the gtest development package
 
-```
+```bash
 sudo apt install libgtest-dev
 ```
 
 Note that this package only install source files. You have to compile the code yourself to create the necessary library files. These source files should be located at /usr/src/gtest. Browse to this folder and use cmake to compile the library
 
-```
+```bash
 cd /usr/src/gtest
 sudo cmake CMakeLists.txt
 sudo make
@@ -378,6 +385,10 @@ sudo make
 # copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder
 sudo cp *.a /usr/lib
 ```
+
+<a name="using-gtest"></a>
+
+##### Using GTest
 
 Lets say we now want to test the following simple squareRoot function
 
@@ -436,7 +447,7 @@ target_link_libraries(runTests ${GTEST_LIBRARIES} pthread)
 
 Compile and run the tests
 
-```
+```bash
 cmake CMakeLists.txt
 make
 ./runTests
@@ -460,7 +471,7 @@ Clang-format is a powerful command-line tool for formatting C and C++ code. It c
 
 Before we can use Clang-format with VSCode, we need to install it on our system.
 
-```
+```bash
 sudo apt install clang-format
 ```
 
@@ -480,7 +491,7 @@ The file should be named .clang-format and placed in the root directory of your 
 
 Here is an example configuration file:
 
-```
+```text
 BasedOnStyle: Google
 IndentWidth: 4
 ColumnLimit: 120
