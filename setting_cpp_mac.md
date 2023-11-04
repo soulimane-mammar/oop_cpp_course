@@ -57,22 +57,22 @@ The Xcode development environment includes the Clang C/C++ compiler and various 
 3. Click the "Install" button next to Xcode.
 
 You will need to agree to the license terms and download the necessary components.
-![](screenshots/macOS/xcode_welcome.jpeg)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/macOS/xcode_welcome.jpeg?raw=true)
 
 The next step is to click on “Create a new Xcode project”.
 If you have an existing project you will click on “Open a project or file” or “Clone an existing project” if the project is on source control.
 Next, click on the macOS tab and then click on the Command-Line app as it is the only thing where we can develop apps in C and C++
 
-![](screenshots/macOS/xcode_create_project.jpeg)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/macOS/xcode_create_project.jpeg?raw=true)
 
 It will now show an interface to give the app a name and the package name. After giving that name there would be a drop-down to select a language. So, instead of swift, you can select C or C++ and click Next
 
-![](screenshots/macOS/xcode_select_language.jpeg)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/macOS/xcode_select_language.jpeg?raw=true)
 
 Then it will ask for the location of the project on your machine
 Then, you can open or create a C or C++ file and start editing it
 
-![](screenshots/macOS/xcode_editing_project.jpeg)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/macOS/xcode_editing_project.jpeg?raw=true)
 
 <a name="install-the--xcode-command-line-tools"></a>
 
@@ -84,7 +84,7 @@ Then, you can open or create a C or C++ file and start editing it
  xcode-select --install
  ```
 
- ![](screenshots/macOS/xcode_cli_tools.png)
+ ![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/macOS/xcode_cli_tools.png?raw=true)
 
 <a name="install-gcc"></a>
 
@@ -133,8 +133,8 @@ export PATH="`pwd`/cmake-3.4.1-Darwin-x86_64/CMake.app/Contents/bin:$PATH"
 
 or by downloading the DMG installer from <a href="https://cmake.org/download/" target="_blank"> Download page </a>
 
-![](screenshots/macOS/cmake_dmg_installer.png)
-![](screenshots/macOS/cmake_app.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/macOS/cmake_dmg_installer.png?raw=true)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/macOS/cmake_app.png?raw=true)
 
 <a name="git"></a>
 
@@ -226,7 +226,7 @@ You can also run VS Code from the terminal by typing 'code' after adding it to t
 - Launch VS Code.
 - Open the **Command Palette** (`Cmd+Shift+P`) and type 'shell command' to find the **Shell Command: Install 'code' command in PATH** command.
 
-![](screenshots/macOS/vscode_shell_command.png)
+![](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/macOS/vscode_shell_command.png?raw=true)
 
 - Restart the terminal for the new `$PATH` value to take effect. You'll be able to type 'code .' in any folder to start editing files in that folder.
 
