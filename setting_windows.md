@@ -74,7 +74,7 @@ If you also want to install `clang`, skip this part and go directly to [Install 
 
 1. Run MSYS2, type the following command:
 
-```
+```bash
 pacman -Syu
 ```
 
@@ -86,7 +86,7 @@ This command will update the packages info, so you get the latest packages. It w
 1. Then it will prompt you `To complete this update all MSYS2 processes including this terminal will be closed. Confirm to proceed [Y/n]`, type `y` and hit enter, and it will close the window after the update is done.
 2. Relaunch MSYS2 from your start menu. Type:
 
-```
+```bash
 pacman -S mingw-w64-x86_64-gcc
 ```
 
@@ -95,7 +95,7 @@ like this, type `y` and hit enter to install gcc
 
 And then type:
 
-```
+```bash
 pacman -S mingw-w64-x86_64-make
 ```
 
@@ -103,7 +103,7 @@ And type `y` to also install `make`.
 
 And then type:
 
-```
+```bash
 pacman -S mingw-w64-x86_64-gdb
 ```
 
@@ -128,7 +128,7 @@ Installing Clang will also automatically install `GCC` (on MSYS2).
 
 1. Run MSYS2, type the following command:
 
-```
+```bash
 pacman -Syu
 ```
 
@@ -141,7 +141,7 @@ This command will update the packages info, so you get the latest packages. It w
 
 4. Relaunch MSYS2 from your start menu. Type:
 
-```
+```bash
 pacman -S mingw-w64-x86_64-clang mingw-w64-x86_64-clang-tools-extra
 ```
 
@@ -150,7 +150,7 @@ like this, type `y` and hit enter to install clang
 
 And then type:
 
-```
+```bash
 pacman -S mingw-w64-x86_64-make
 ```
 
@@ -158,7 +158,7 @@ And type `y` to also install `make`.
 
 And then type:
 
-```
+```bash
 pacman -S mingw-w64-x86_64-gdb
 ```
 
@@ -223,7 +223,7 @@ which you used to install `GCC` and `Clang`.
 - Using `MSYS2`:
   1. Run `MSYS2` and type this command and type `Y` to install
 
-  ```
+  ```bash
   pacman -S mingw-w64-x86_64-cmake
   ```
 
@@ -387,19 +387,19 @@ For more, see documentation <a href="https://learn.microsoft.com/en-us/visualstu
 1. Open a shell(`cmd`) and go to the directory where you want `vcpkg` to be installed. (Something like `C:\` or `C:\dev`)
 2. Type this command:
 
-   ```
+   ```bash
    git clone https://github.com/microsoft/vcpkg
    ```
 
 3. Type this command:
 
-   ```
+   ```bash
    .\vcpkg\bootstrap-vcpkg.bat
    ```
 
 4. Type this command:
 
-   ```
+   ```bash
    .\vcpkg\vcpkg.exe integrate install
    ```
 
@@ -425,7 +425,7 @@ Below is a complete example of using `vcpkg` to install and use the [boost](http
 
 1. Install the library in `vcpkg` with `vcpkg install <Library Name>`, like this:
 
-   ```
+   ```bash
    vcpkg install boost:x64-windows
    ```
 
@@ -460,19 +460,19 @@ You can get google test by these ways
 
 - Using `vcpkg`: Following setting up `vcpkg`, we can easily install the library by
 
-  ```
+  ```bash
   vcpkg install gtest:x64-windows
   ```
 
   Note that if your application is targeted to 32 bit, use this command instead
 
-  ```
+  ```bash
   vcpkg install gtest
   ```
 
 - Using `MSYS2`: Note that this can only be used with `GCC & Clang` compiler from `MSYS2`.
 
-  ```
+  ```bash
   pacman -S pacman -S mingw-w64-x86_64-gtest
   ```
 
@@ -498,7 +498,7 @@ After installing the library,
        (or x86 depend on the architect or your installed Gtest library)
        and add these 2 lines
 
-    ```
+    ```text
     gtestd.lib
     $(VcpkgRoot)installed\$(VcpkgTriplet)\debug\lib\manual-link\gtest_maind.lib
     ```
@@ -507,7 +507,7 @@ After installing the library,
 
     1. Click the configuration menu to `Release` and also add these 2 lines, like this
 
-    ```
+    ```text
     gtest.lib
     $(VcpkgRoot)installed\$(VcpkgTriplet)\lib\manual-link\gtest_main.lib
     ```

@@ -130,7 +130,7 @@
 <ol>
 <li>Run MSYS2, type the following command:</li>
 </ol>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>pacman -Syu
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-Syu</span>
 </code></pre><p><code>pacman</code> is the package manager used by MSYS2. <code>-S</code> means "sync". <code>-y</code> means "download fresh package databases from the server". <code>-u</code> means "upgrade installed packages".</p>
 <p>This command will update the packages info, so you get the latest packages. It will prompt you like this, and you type <code>y</code> and hit enter.<br>
 <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/1.png?raw=true" alt=""></p>
@@ -138,14 +138,14 @@
 <li>Then it will prompt you <code>To complete this update all MSYS2 processes including this terminal will be closed. Confirm to proceed [Y/n]</code>, type <code>y</code> and hit enter, and it will close the window after the update is done.</li>
 <li>Relaunch MSYS2 from your start menu. Type:</li>
 </ol>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>pacman -S mingw-w64-x86_64-gcc
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-gcc
 </code></pre><p>like this, type <code>y</code> and hit enter to install gcc<br>
 <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/2.png?raw=true" alt=""></p>
 <p>And then type:</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>pacman -S mingw-w64-x86_64-make
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-make
 </code></pre><p>And type <code>y</code> to also install <code>make</code>.</p>
 <p>And then type:</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>pacman -S mingw-w64-x86_64-gdb
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-gdb
 </code></pre><p>And type <code>y</code> to also install <code>gdb</code>.</p>
 <ol start="5">
 <li>
@@ -170,7 +170,7 @@
 <ol>
 <li>Run MSYS2, type the following command:</li>
 </ol>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>pacman -Syu
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-Syu</span>
 </code></pre><p><code>pacman</code> is the package manager used by MSYS2. <code>-S</code> means "sync". <code>-y</code> means "download fresh package databases from the server". <code>-u</code> means "upgrade installed packages".</p>
 <p>This command will update the packages info, so you get the latest packages. It will prompt you like this, and you type <code>y</code> and hit enter.<br>
 <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/1.png?raw=true" alt=""></p>
@@ -182,14 +182,14 @@
 <p>Relaunch MSYS2 from your start menu. Type:</p>
 </li>
 </ol>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>pacman -S mingw-w64-x86_64-clang mingw-w64-x86_64-clang-tools-extra
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-clang mingw-w64-x86_64-clang-tools-extra
 </code></pre><p>like this, type <code>y</code> and hit enter to install clang<br>
 <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/clang/clang.png?raw=true" alt=""></p>
 <p>And then type:</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>pacman -S mingw-w64-x86_64-make
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-make
 </code></pre><p>And type <code>y</code> to also install <code>make</code>.</p>
 <p>And then type:</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>pacman -S mingw-w64-x86_64-gdb
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-gdb
 </code></pre><p>And type <code>y</code> to also install <code>gdb</code>.</p>
 <ol start="5">
 <li>
@@ -253,7 +253,7 @@ Now you finished installing cmake.</p>
 <ol>
 <li>Run <code>MSYS2</code> and type this command and type <code>Y</code> to install</li>
 </ol>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>pacman -S mingw-w64-x86_64-cmake
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-cmake
 </code></pre><ol start="2">
 <li>Search for <code>environment variable</code> and open it -&gt; <code>Environment Variables</code>, find <code>Path</code> in <code>System variables</code>, double click to open the setting -&gt; click <code>New</code> and copy <code>C:\msys64\usr\bin</code> to the new entry.<br>
 <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/SourceControl/Git.png?raw=true" alt=""></li>
@@ -416,15 +416,15 @@ Rememeber to click <code>Allow</code> when cmake want to configure the intellise
 </li>
 <li>
 <p>Type this command:</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>git clone https://github.com/microsoft/vcpkg
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">git</span> clone https://github.com/microsoft/vcpkg
 </code></pre></li>
 <li>
 <p>Type this command:</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>.\vcpkg\bootstrap-vcpkg.bat
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>.<span class="token punctuation">\</span>vcpkg<span class="token punctuation">\</span>bootstrap-vcpkg.bat
 </code></pre></li>
 <li>
 <p>Type this command:</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>.\vcpkg\vcpkg.exe integrate install
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>.<span class="token punctuation">\</span>vcpkg<span class="token punctuation">\</span>vcpkg.exe integrate <span class="token function">install</span>
 </code></pre></li>
 </ol>
 <p><a name="finding-and-installing-a-library" href=""></a></p>
@@ -447,7 +447,7 @@ Rememeber to click <code>Allow</code> when cmake want to configure the intellise
 <ol>
 <li>
 <p>Install the library in <code>vcpkg</code> with <code>vcpkg install &lt;Library Name&gt;</code>, like this:</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>vcpkg install boost:x64-windows
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">vcpkg</span> <span class="token function">install</span> boost:x64-windows
 </code></pre><p>And you should see the following<br>
 <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/vcpkg/vcpkg_install.png?raw=true" alt=""></p>
 </li>
@@ -477,13 +477,13 @@ Rememeber to click <code>Allow</code> when cmake want to configure the intellise
 <ul>
 <li>
 <p>Using <code>vcpkg</code>: Following setting up <code>vcpkg</code>, we can easily install the library by</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>vcpkg install gtest:x64-windows
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">vcpkg</span> <span class="token function">install</span> gtest:x64-windows
 </code></pre><p>Note that if your application is targeted to 32 bit, use this command instead</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>vcpkg install gtest
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">vcpkg</span> <span class="token function">install</span> gtest
 </code></pre></li>
 <li>
 <p>Using <code>MSYS2</code>: Note that this can only be used with <code>GCC &amp; Clang</code> compiler from <code>MSYS2</code>.</p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>pacman -S pacman -S mingw-w64-x86_64-gtest
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-gtest
 </code></pre></li>
 </ul>
 <p>After installing the library,</p>
@@ -508,13 +508,13 @@ Make sure this configuration is <code>Debug</code> and <code>x64</code><br>
 (or x86 depend on the architect or your installed Gtest library)<br>
 and add these 2 lines</li>
 </ol>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>gtestd.lib
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>gtestd.lib
 $(VcpkgRoot)installed\$(VcpkgTriplet)\debug\lib\manual-link\gtest_maind.lib
 </code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/UnitTest/GTest/VSBuildMain.png?raw=true" alt=""></p>
 <ol>
 <li>Click the configuration menu to <code>Release</code> and also add these 2 lines, like this</li>
 </ol>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>gtest.lib
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>gtest.lib
 $(VcpkgRoot)installed\$(VcpkgTriplet)\lib\manual-link\gtest_main.lib
 </code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/UnitTest/Gtest/VSBuildMainRelease2.png?raw=true" alt=""></p>
 <p>Then you should be able to write the test source file without the <code>main</code> function, and build in both configurations like this</p>
