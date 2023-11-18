@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>course_overview</title>
+      <title>07-unit-testing</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -40,28 +40,113 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p>Welcome to <strong>Introduction to Object-Oriented Programming in C++ for Embedded Systems</strong> In this course, we will embark on a fascinating journey into the world of embedded systems, using the powerful and versatile C++ programming language as our primary tool.</p>
-<h4 id="why-object-oriented-programming">Why Object-Oriented Programming? </h4>
-<p>Embedded systems are the backbone of modern technology, found in everything from smartphones to  car's engine control units. They ensure that our devices and gadgets work seamlessly. Understanding how to design and program these systems is a vital skill for any aspiring engineer or programmer, and object-oriented programming (OOP) in C++ is an essential approach.</p>
-<h4 id="a-solid-foundation-in-c">A Solid Foundation in C++ </h4>
-<p>We'll start by building a strong foundation in C++, the language known for its performance, versatility, and rich ecosystem of libraries. You will learn how to write code that is both efficient and maintainable, setting the stage for designing embedded systems that meet the highest standards.</p>
-<h4 id="exploring-object-oriented-principles">Exploring Object-Oriented Principles </h4>
-<p>The heart of this course lies in exploring the principles of object-oriented programming. You will discover how to encapsulate data and functionality into objects, making your code more modular and easier to manage. We will delve into topics such as classes, objects, inheritance, polymorphism, and encapsulation, all crucial aspects of OOP.</p>
-<h4 id="applied-learning">Applied Learning </h4>
-<p>I believe that theory is only as valuable as its practical application. You'll have the opportunity to apply your newfound knowledge and explore how OOP concepts can be used to create efficient and reliable software for devices with limited resources.</p>
-<h4 id="target-audience">Target Audience </h4>
-<p>This course is designed for students in the field of embedded systems who want to expand their skillset and gain a deeper understanding of object-oriented programming in C++. No matter your level of programming expertise, you will discover valuable insights and encounter engaging challenges within this course.</p>
-<h4 id="key-takeaways">Key Takeaways </h4>
+<p><a href="https://en.wikipedia.org/wiki/Unit_testing" target="_blank">What is unit testing? </a></p>
+<p><a name="google-test" href=""></a></p>
+<h3 id="google-test">Google Test </h3>
+<p><a href="https://github.com/google/googletest" target="_blank">google test</a> is a famous and widely supported by IDEs/text editors unit testing framework for C++.</p>
+<p>You can get google test by these ways</p>
 <ul>
-<li>A strong foundation in C++ programming.</li>
-<li>Proficiency in object-oriented programming principles.</li>
-<li>Hands-on experience with developing embedded systems.</li>
-<li>The ability to design efficient and maintainable software for resource-constrained environments.</li>
+<li>
+<p>Using <code>vcpkg</code>: Following setting up <code>vcpkg</code>, we can easily install the library by</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">vcpkg</span> <span class="token function">install</span> gtest:x64-windows
+</code></pre><p>Note that if your application is targeted to 32 bit, use this command instead</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">vcpkg</span> <span class="token function">install</span> gtest
+</code></pre></li>
+<li>
+<p>Using <code>MSYS2</code>: Note that this can only be used with <code>GCC &amp; Clang</code> compiler from <code>MSYS2</code>.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-gtest
+</code></pre></li>
 </ul>
-<h4 id="prerequisites">Prerequisites </h4>
-<p>To succeed in this course, a basic understanding of programming concepts and the C language will be beneficial. If you're not, don't worry - I will provide resources to help you get up to speed.</p>
-<h4 id="instructor">Instructor </h4>
-<p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/images/Soulimane_MAMMAR_gray_3x4.jpg?raw=true" style="float:left; width:80px; height:auto; margin: 0 5px;"><strong>Soulimane Mammar</strong> is an Assistant Professor at the Polytechnic School of Oran, Algeria. With a career spanning since the year 2000, he has dedicated his expertise to the fields of system and network administration, cloud infrastructure, and security. Currently, he holds the position of lecturer in the Electrical Engineering department, where he imparts knowledge on subjects such as operating systems, discrete event systems, object-oriented programming for embedded systems, and industrial networks.</p>
+<p>After installing the library,</p>
+<ul>
+<li>
+<p>If you use Visual Studio (MSBuild Project), you just need to <code>#include &lt;gtest/gtest.h&gt;</code> like a normal C++ source file and either:</p>
+<ul>
+<li>
+<p>Provide a <code>main</code> function at the bottom of your source file</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> argc<span class="token punctuation">,</span> <span class="token keyword keyword-char">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token double-colon punctuation">::</span>testing<span class="token double-colon punctuation">::</span><span class="token function">InitGoogleTest</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> <span class="token function">RUN_ALL_TESTS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Gtest/../UnitTest/GTest/VSBuild.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>Don't provide a <code>main</code> function, then you need to link additional libraries in the linker settings.</p>
+<ol>
+<li>Right click on your project -&gt; <code>Properties</code> -&gt; <code>Linker</code> -&gt; <code>AdditionalDependencies</code>,<br>
+Make sure this configuration is <code>Debug</code> and <code>x64</code><br>
+(or x86 depend on the architect or your installed Gtest library)<br>
+and add these 2 lines</li>
+</ol>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>gtestd.lib
+$(VcpkgRoot)installed\$(VcpkgTriplet)\debug\lib\manual-link\gtest_maind.lib
+</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/UnitTest/GTest/VSBuildMain.png?raw=true" alt=""></p>
+<ol>
+<li>Click the configuration menu to <code>Release</code> and also add these 2 lines, like this</li>
+</ol>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>gtest.lib
+$(VcpkgRoot)installed\$(VcpkgTriplet)\lib\manual-link\gtest_main.lib
+</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/UnitTest/Gtest/VSBuildMainRelease2.png?raw=true" alt=""></p>
+<p>Then you should be able to write the test source file without the <code>main</code> function, and build in both configurations like this</p>
+<ul>
+<li>Debug build<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/UnitTest/GTest/VSBuildMainDebug.png?raw=true" alt=""></li>
+<li>Release build<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/UnitTest/GTest/VSBuildMainRelease.png?raw=true" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>If you use CMake, regardless of whether you installed <code>Google Test</code> library from <code>vcpkg</code> or <code>MSYS2</code>,<br>
+you can make use of <code>CTest</code> built-in to Cmake as a test runner to run your google test,<br>
+which is supported by most IDE/editors you will see below.<br>
+A minimum <code>CMakeLists.txt</code> is like:</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="cmake" class="language-cmake cmake"><code><span class="token keyword keyword-cmake_minimum_required">cmake_minimum_required</span><span class="token punctuation">(</span><span class="token property">VERSION</span> <span class="token number">3.10.0</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-project">project</span><span class="token punctuation">(</span>&lt;project name<span class="token punctuation">&gt;</span> <span class="token property">VERSION</span> <span class="token number">0.1.0</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-find_package">find_package</span><span class="token punctuation">(</span>GTest CONFIG REQUIRED<span class="token punctuation">)</span>
+<span class="token keyword keyword-enable_testing">enable_testing</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword keyword-include">include</span><span class="token punctuation">(</span>GoogleTest<span class="token punctuation">)</span> <span class="token comment">#for gtest_discover_tests() function</span>
+
+<span class="token keyword keyword-add_executable">add_executable</span><span class="token punctuation">(</span>&lt;test target name<span class="token punctuation">&gt;</span> test.cpp<span class="token punctuation">)</span> <span class="token comment">#This is the testing executable</span>
+<span class="token keyword keyword-target_link_libraries">target_link_libraries</span><span class="token punctuation">(</span>&lt;test target name<span class="token punctuation">&gt;</span> <span class="token namespace">PRIVATE</span> <span class="token inserted class-name">GTest::gtest</span> <span class="token inserted class-name">GTest::gtest_main</span><span class="token punctuation">)</span> <span class="token comment">#Link it to the google test library</span>
+<span class="token function">gtest_discover_tests</span><span class="token punctuation">(</span>&lt;test target name<span class="token punctuation">&gt;</span><span class="token punctuation">)</span>  <span class="token comment">#integrate google test with ctest to this testing executable</span>
+</code></pre><ul>
+<li>Or you simply want a testing executable, so you don't bother with <code>CTest</code>.</li>
+</ul>
+<pre data-role="codeBlock" data-info="cmake" class="language-cmake cmake"><code><span class="token keyword keyword-cmake_minimum_required">cmake_minimum_required</span><span class="token punctuation">(</span><span class="token property">VERSION</span> <span class="token number">3.10.0</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-project">project</span><span class="token punctuation">(</span>&lt;project name<span class="token punctuation">&gt;</span> <span class="token property">VERSION</span> <span class="token number">0.1.0</span><span class="token punctuation">)</span>
+
+<span class="token keyword keyword-find_package">find_package</span><span class="token punctuation">(</span>GTest CONFIG REQUIRED<span class="token punctuation">)</span>
+<span class="token keyword keyword-add_executable">add_executable</span><span class="token punctuation">(</span>&lt;test target name<span class="token punctuation">&gt;</span> test.cpp<span class="token punctuation">)</span> <span class="token comment">#This is the testing executable</span>
+<span class="token keyword keyword-target_link_libraries">target_link_libraries</span><span class="token punctuation">(</span>&lt;test target name<span class="token punctuation">&gt;</span> <span class="token namespace">PRIVATE</span> <span class="token inserted class-name">GTest::gtest</span> <span class="token inserted class-name">GTest::gtest_main</span><span class="token punctuation">)</span> <span class="token comment">#Link it to the google test library</span>
+</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/UnitTest/GTest/MSYS2.VSCode.png?raw=true" alt=""></p>
+<p><a name="integration-with-vscode" href=""></a></p>
+<h4 id="integration-with-vscode">Integration with VSCode </h4>
+<p>You need to use <a href="#google-test"><code>CTest</code></a> (the first version of the minimum <code>CMakeLists.txt</code>) as your test runner to get the integration working.</p>
+<ol>
+<li>Install the <a href="https://marketplace.visualstudio.com/items?itemName=fredericbonnet.cmake-test-adapter" target="_blank"> CMake Test Explorer</a> extension (proud contributor)</li>
+<li>Open VSCode settings, go to <code>Extension</code> -&gt; <code>CMake Test Explorer</code> section, and change these following settings:
+<ul>
+<li>Build Config: <code>${buildType}</code></li>
+<li>Build Dir: <code>${buildDirectory}</code></li>
+<li>Select Cmake Integration<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/UnitTest/GTest/VSCodeIntegration.png?raw=true" alt=""></li>
+</ul>
+</li>
+<li>After that, build your project once and then click the <code>refresh test</code> button, this plugin should find all the testing suites and test cases in your test files.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/UnitTest/GTest/VSCodeIntegration2.png?raw=true" alt=""></li>
+<li>Then you can easily manage or debug all your test cases or each individual test in this panel.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/UnitTest/GTest/VSCodeIntegration3.png?raw=true" alt=""></li>
+</ol>
+<hr>
+<p><a name="source-control" href=""></a></p>
 
       </div>
       

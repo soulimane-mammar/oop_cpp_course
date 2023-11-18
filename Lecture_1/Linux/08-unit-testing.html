@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>course_overview</title>
+      <title>08-unit-testing</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -40,28 +40,71 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p>Welcome to <strong>Introduction to Object-Oriented Programming in C++ for Embedded Systems</strong> In this course, we will embark on a fascinating journey into the world of embedded systems, using the powerful and versatile C++ programming language as our primary tool.</p>
-<h4 id="why-object-oriented-programming">Why Object-Oriented Programming? </h4>
-<p>Embedded systems are the backbone of modern technology, found in everything from smartphones to  car's engine control units. They ensure that our devices and gadgets work seamlessly. Understanding how to design and program these systems is a vital skill for any aspiring engineer or programmer, and object-oriented programming (OOP) in C++ is an essential approach.</p>
-<h4 id="a-solid-foundation-in-c">A Solid Foundation in C++ </h4>
-<p>We'll start by building a strong foundation in C++, the language known for its performance, versatility, and rich ecosystem of libraries. You will learn how to write code that is both efficient and maintainable, setting the stage for designing embedded systems that meet the highest standards.</p>
-<h4 id="exploring-object-oriented-principles">Exploring Object-Oriented Principles </h4>
-<p>The heart of this course lies in exploring the principles of object-oriented programming. You will discover how to encapsulate data and functionality into objects, making your code more modular and easier to manage. We will delve into topics such as classes, objects, inheritance, polymorphism, and encapsulation, all crucial aspects of OOP.</p>
-<h4 id="applied-learning">Applied Learning </h4>
-<p>I believe that theory is only as valuable as its practical application. You'll have the opportunity to apply your newfound knowledge and explore how OOP concepts can be used to create efficient and reliable software for devices with limited resources.</p>
-<h4 id="target-audience">Target Audience </h4>
-<p>This course is designed for students in the field of embedded systems who want to expand their skillset and gain a deeper understanding of object-oriented programming in C++. No matter your level of programming expertise, you will discover valuable insights and encounter engaging challenges within this course.</p>
-<h4 id="key-takeaways">Key Takeaways </h4>
-<ul>
-<li>A strong foundation in C++ programming.</li>
-<li>Proficiency in object-oriented programming principles.</li>
-<li>Hands-on experience with developing embedded systems.</li>
-<li>The ability to design efficient and maintainable software for resource-constrained environments.</li>
-</ul>
-<h4 id="prerequisites">Prerequisites </h4>
-<p>To succeed in this course, a basic understanding of programming concepts and the C language will be beneficial. If you're not, don't worry - I will provide resources to help you get up to speed.</p>
-<h4 id="instructor">Instructor </h4>
-<p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/images/Soulimane_MAMMAR_gray_3x4.jpg?raw=true" style="float:left; width:80px; height:auto; margin: 0 5px;"><strong>Soulimane Mammar</strong> is an Assistant Professor at the Polytechnic School of Oran, Algeria. With a career spanning since the year 2000, he has dedicated his expertise to the fields of system and network administration, cloud infrastructure, and security. Currently, he holds the position of lecturer in the Electrical Engineering department, where he imparts knowledge on subjects such as operating systems, discrete event systems, object-oriented programming for embedded systems, and industrial networks.</p>
+<p><a name="unit-testing" href=""></a></p>
+<p><a name="google-test-gtest" href=""></a></p>
+<h4 id="google-test-gtest">Google Test (GTest) </h4>
+<p>Google test is a framework for writing C++ unit tests.</p>
+<p><a name="installing-gtest" href=""></a></p>
+<h5 id="installing-gtest">Installing GTest </h5>
+<p>Start by installing the gtest development package</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libgtest-dev
+</code></pre><p>Note that this package only install source files. You have to compile the code yourself to create the necessary library files. These source files should be located at /usr/src/gtest. Browse to this folder and use cmake to compile the library</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token builtin class-name">cd</span> /usr/src/gtest
+<span class="token function">sudo</span> cmake CMakeLists.txt
+<span class="token function">sudo</span> <span class="token function">make</span>
+ 
+<span class="token comment"># copy or symlink libgtest.a and libgtest_main.a to your /usr/lib folder</span>
+<span class="token function">sudo</span> <span class="token function">cp</span> *.a /usr/lib
+</code></pre><p><a name="using-gtest" href=""></a></p>
+<h5 id="using-gtest">Using GTest </h5>
+<p>Lets say we now want to test the following simple squareRoot function</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// whattotest.cpp</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;math.h&gt;</span></span>
+ 
+<span class="token keyword keyword-double">double</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token keyword keyword-const">const</span> <span class="token keyword keyword-double">double</span> a<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-double">double</span> b <span class="token operator">=</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-if">if</span><span class="token punctuation">(</span>b <span class="token operator">!=</span> b<span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment">// nan check</span>
+        <span class="token keyword keyword-return">return</span> <span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token keyword keyword-else">else</span><span class="token punctuation">{</span>
+        <span class="token keyword keyword-return">return</span> <span class="token function">sqrt</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>In the following code, we create two tests that test the function using a simple assertion. There exists many other assertion macros in the framework (see <a href="https://google.github.io/googletest/primer.html">https://google.github.io/googletest/primer.html</a>). The code contains a small main function that will run all of the tests automatically.</p>
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp cpp"><code><span class="token comment">// tests.cpp</span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">"whattotest.cpp"</span></span>
+<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;gtest/gtest.h&gt;</span></span>
+ 
+<span class="token function">TEST</span><span class="token punctuation">(</span>SquareRootTest<span class="token punctuation">,</span> PositiveNos<span class="token punctuation">)</span> <span class="token punctuation">{</span> 
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token number">36.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token number">18.0</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token number">324.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token number">25.4</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token number">645.16</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token number">0.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token function">TEST</span><span class="token punctuation">(</span>SquareRootTest<span class="token punctuation">,</span> NegativeNos<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">15.0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">ASSERT_EQ</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1.0</span><span class="token punctuation">,</span> <span class="token function">squareRoot</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token keyword keyword-int">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword keyword-int">int</span> argc<span class="token punctuation">,</span> <span class="token keyword keyword-char">char</span> <span class="token operator">*</span><span class="token operator">*</span>argv<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    testing<span class="token double-colon punctuation">::</span><span class="token function">InitGoogleTest</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>argc<span class="token punctuation">,</span> argv<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword keyword-return">return</span> <span class="token function">RUN_ALL_TESTS</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>The next step is to compile the code. The  <code>CMakeLists.txt</code> file below to compile the tests. This file locates the google test library and links it with the test application. Note that we also have to link to the pthread library or the application won’t compile.</p>
+<pre data-role="codeBlock" data-info="cmake" class="language-cmake cmake"><code><span class="token keyword keyword-cmake_minimum_required">cmake_minimum_required</span><span class="token punctuation">(</span><span class="token property">VERSION</span> <span class="token number">2.6</span><span class="token punctuation">)</span>
+ 
+<span class="token comment"># Locate GTest</span>
+<span class="token keyword keyword-find_package">find_package</span><span class="token punctuation">(</span>GTest REQUIRED<span class="token punctuation">)</span>
+<span class="token keyword keyword-include_directories">include_directories</span><span class="token punctuation">(</span><span class="token punctuation">${</span>GTEST_INCLUDE_DIRS<span class="token punctuation">}</span><span class="token punctuation">)</span>
+ 
+<span class="token comment"># Link runTests with what we want to test and the GTest and pthread library</span>
+<span class="token keyword keyword-add_executable">add_executable</span><span class="token punctuation">(</span>runTests tests.cpp<span class="token punctuation">)</span>
+<span class="token keyword keyword-target_link_libraries">target_link_libraries</span><span class="token punctuation">(</span>runTests <span class="token punctuation">${</span>GTEST_LIBRARIES<span class="token punctuation">}</span> pthread<span class="token punctuation">)</span>
+</code></pre><p>Compile and run the tests</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>cmake CMakeLists.txt
+<span class="token function">make</span>
+./runTests
+</code></pre><p><a name="addtional-tooling" href=""></a></p>
 
       </div>
       

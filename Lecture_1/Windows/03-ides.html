@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>course_overview</title>
+      <title>03-ides</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -40,28 +40,81 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p>Welcome to <strong>Introduction to Object-Oriented Programming in C++ for Embedded Systems</strong> In this course, we will embark on a fascinating journey into the world of embedded systems, using the powerful and versatile C++ programming language as our primary tool.</p>
-<h4 id="why-object-oriented-programming">Why Object-Oriented Programming? </h4>
-<p>Embedded systems are the backbone of modern technology, found in everything from smartphones to  car's engine control units. They ensure that our devices and gadgets work seamlessly. Understanding how to design and program these systems is a vital skill for any aspiring engineer or programmer, and object-oriented programming (OOP) in C++ is an essential approach.</p>
-<h4 id="a-solid-foundation-in-c">A Solid Foundation in C++ </h4>
-<p>We'll start by building a strong foundation in C++, the language known for its performance, versatility, and rich ecosystem of libraries. You will learn how to write code that is both efficient and maintainable, setting the stage for designing embedded systems that meet the highest standards.</p>
-<h4 id="exploring-object-oriented-principles">Exploring Object-Oriented Principles </h4>
-<p>The heart of this course lies in exploring the principles of object-oriented programming. You will discover how to encapsulate data and functionality into objects, making your code more modular and easier to manage. We will delve into topics such as classes, objects, inheritance, polymorphism, and encapsulation, all crucial aspects of OOP.</p>
-<h4 id="applied-learning">Applied Learning </h4>
-<p>I believe that theory is only as valuable as its practical application. You'll have the opportunity to apply your newfound knowledge and explore how OOP concepts can be used to create efficient and reliable software for devices with limited resources.</p>
-<h4 id="target-audience">Target Audience </h4>
-<p>This course is designed for students in the field of embedded systems who want to expand their skillset and gain a deeper understanding of object-oriented programming in C++. No matter your level of programming expertise, you will discover valuable insights and encounter engaging challenges within this course.</p>
-<h4 id="key-takeaways">Key Takeaways </h4>
+<p>This section will cover setting up <code>Visual Studio</code> but there are plenty of other choices out there like <code>Dev-C++</code>, <code>CLion</code>, <code>QtCreator</code>, <code>Cevelop (based on Eclipse)</code> and <code>Eclipse</code>.</p>
+<p><a name="setting-up-visual-studio" href=""></a></p>
+<h4 id="setting-up-visual-studio">Setting up Visual Studio </h4>
+<p>You can install Visual Studio as a standalone IDE or as a whole package including compiler, toolchain and windows sdk.</p>
+<p><a name="full-package" href=""></a></p>
+<h5 id="full-package">Full package </h5>
+<ol>
+<li>
+<p><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Visual studio</a>. Choose the <code>Community</code> option.</p>
+</li>
+<li>
+<p>Run the installer, select these workflows<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/Installer.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>After installation, you are prompt to restart your computer. And then you will need to register a Microsoft Account to continue using Visual Studio.</p>
+</li>
+<li>
+<p>Run Visual Studio, select <code>Create a new project</code> -&gt; <code>Empty Project/Console App</code>, and select <code>Place solution and project in the same directory</code>.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CreateProject.png?raw=true" alt=""><br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CreateProject2.png?raw=true" alt=""><br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CreateProject3.png?raw=true" alt=""><br>
+The only difference between <code>Empty Project</code> and <code>Console App</code> is the latter will provide you with a "Hello world" program and that's it! All the default include directories and default linked runtime libraries are the same!</p>
+</li>
+</ol>
 <ul>
-<li>A strong foundation in C++ programming.</li>
-<li>Proficiency in object-oriented programming principles.</li>
-<li>Hands-on experience with developing embedded systems.</li>
-<li>The ability to design efficient and maintainable software for resource-constrained environments.</li>
+<li>
+<p>If you choose to create <code>Empty Project</code>, right click on the <code>&lt;Project Name&gt;</code> -&gt; <code>Add</code> -&gt; <code>New item</code> -&gt; <code>C++ source file</code> -&gt; <code>Add</code>, like this:<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/EmptyProject1.png?raw=true" alt=""><br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/EmptyProject2.png?raw=true" alt=""><br>
+Then write a simple "Hello world" program and hit <code>ctrl+f5</code> to compile and run it, and you shall see this:<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/EmptyProject3.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>If you choose to create <code>Console App</code>, you shall see the already created "Hello world". Hit <code>ctrl+f5</code> to compile and run the program and you shall see this: <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/ConsoleApplication.png?raw=true" alt=""></p>
+</li>
 </ul>
-<h4 id="prerequisites">Prerequisites </h4>
-<p>To succeed in this course, a basic understanding of programming concepts and the C language will be beneficial. If you're not, don't worry - I will provide resources to help you get up to speed.</p>
-<h4 id="instructor">Instructor </h4>
-<p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/images/Soulimane_MAMMAR_gray_3x4.jpg?raw=true" style="float:left; width:80px; height:auto; margin: 0 5px;"><strong>Soulimane Mammar</strong> is an Assistant Professor at the Polytechnic School of Oran, Algeria. With a career spanning since the year 2000, he has dedicated his expertise to the fields of system and network administration, cloud infrastructure, and security. Currently, he holds the position of lecturer in the Electrical Engineering department, where he imparts knowledge on subjects such as operating systems, discrete event systems, object-oriented programming for embedded systems, and industrial networks.</p>
+<p><a name="standalone-ide" href=""></a></p>
+<h5 id="standalone-ide">Standalone IDE </h5>
+<p>If you install Visual Studio as a standalone IDE without installing MSVC compiler toolchains, you can use it with CMake. If you have installed MSVC compiler toolchain, you can use it with Visual Studio solution just as it's a <a href="#full-package">full install</a> like above. Here I introduce how to use it with CMake, <strong>without MSVC</strong>.</p>
+<ol>
+<li>
+<p><a href="https://visualstudio.microsoft.com/downloads/" target="_blank">Visual studio</a>. Choose the <code>Community</code> option.</p>
+</li>
+<li>
+<p>Run the installer, select these workflows and deselect all the optionals on the right, like this<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/InstallStandalone.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>After installation, you need to register a Microsoft Account to continue using Visual Studio.</p>
+</li>
+<li>
+<p>Run Visual Studio, select <code>Create a new project</code> -&gt; <code>CMake Project</code> -&gt; select <code>Place Project under the same directory</code> -&gt; <code>Create</code>, like this:<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CreateProject.png?raw=true" alt=""><br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CMakeProject1.png?raw=true" alt=""><br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CMakeProject2.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>Visual Studio will auto generate a "Hello world" project for you, and it can successfully configure the project and compile because CMake can detect the installed <code>GCC</code>. However, it will have incorrect include errors.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CMakeProject3.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>To solve this error, click on the configuration menu -&gt; <code>Manage Configurations</code> -&gt; click the add button -&gt; select <code>Mingw64-Debug</code> -&gt; click on the previous old configuration and click delete button<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CMakeProject4.png?raw=true" alt=""><br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CMakeProject5.png?raw=true" alt=""><br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CMakeProject6.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>Hit <code>ctrl+s</code> to save this configuration, then the include error should go away.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CMakeProject9.png?raw=true" alt=""></p>
+</li>
+</ol>
+<p>Note: If for some reason, Visual Studio doesn't detect the right MingW version, you will still get include errors. You need to edit the <code>CMakeSettings.json</code> and correct the MingW version, like this:<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CMakeProject7.png?raw=true" alt=""><br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/IDE/VisualStudio/CMakeProject8.png?raw=true" alt=""></p>
 
       </div>
       

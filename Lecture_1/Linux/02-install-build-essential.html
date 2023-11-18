@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>course_overview</title>
+      <title>02-install-build-essential</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -40,28 +40,19 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p>Welcome to <strong>Introduction to Object-Oriented Programming in C++ for Embedded Systems</strong> In this course, we will embark on a fascinating journey into the world of embedded systems, using the powerful and versatile C++ programming language as our primary tool.</p>
-<h4 id="why-object-oriented-programming">Why Object-Oriented Programming? </h4>
-<p>Embedded systems are the backbone of modern technology, found in everything from smartphones to  car's engine control units. They ensure that our devices and gadgets work seamlessly. Understanding how to design and program these systems is a vital skill for any aspiring engineer or programmer, and object-oriented programming (OOP) in C++ is an essential approach.</p>
-<h4 id="a-solid-foundation-in-c">A Solid Foundation in C++ </h4>
-<p>We'll start by building a strong foundation in C++, the language known for its performance, versatility, and rich ecosystem of libraries. You will learn how to write code that is both efficient and maintainable, setting the stage for designing embedded systems that meet the highest standards.</p>
-<h4 id="exploring-object-oriented-principles">Exploring Object-Oriented Principles </h4>
-<p>The heart of this course lies in exploring the principles of object-oriented programming. You will discover how to encapsulate data and functionality into objects, making your code more modular and easier to manage. We will delve into topics such as classes, objects, inheritance, polymorphism, and encapsulation, all crucial aspects of OOP.</p>
-<h4 id="applied-learning">Applied Learning </h4>
-<p>I believe that theory is only as valuable as its practical application. You'll have the opportunity to apply your newfound knowledge and explore how OOP concepts can be used to create efficient and reliable software for devices with limited resources.</p>
-<h4 id="target-audience">Target Audience </h4>
-<p>This course is designed for students in the field of embedded systems who want to expand their skillset and gain a deeper understanding of object-oriented programming in C++. No matter your level of programming expertise, you will discover valuable insights and encounter engaging challenges within this course.</p>
-<h4 id="key-takeaways">Key Takeaways </h4>
+<p><a name="install-the-build-essential-package" href=""></a></p>
+<p>The build-essentials packages are the form of meta-packages that are essential to compile software. They contain the GNU/g++ compiler collection, GNU debugger, and a few more libraries and tools that are needed for compiling a program. A few other packages, like GCC, make, G++, dpkg-dev, etc., are also installed on our system when we install the build-essential packages.<br>
+This meta-package contains five different packages that are important to compile software on Debian/Ubuntu.</p>
 <ul>
-<li>A strong foundation in C++ programming.</li>
-<li>Proficiency in object-oriented programming principles.</li>
-<li>Hands-on experience with developing embedded systems.</li>
-<li>The ability to design efficient and maintainable software for resource-constrained environments.</li>
+<li><strong>g++</strong>: It is a GNU compiler for C++ language.</li>
+<li><strong>gcc</strong>: It is a GNU compiler for C language.</li>
+<li><strong>make</strong>: It is a helpful utility that is used to direct the program's compilation. The tool, i.e., make, interprets a file known as "makefile" that can guide the compiler on how to operate.</li>
+<li><strong>libc6-dev</strong>: It is a GNU C library. It includes the header files and development directories used for compiling general C++ and C scripts.</li>
+<li><strong>dpkg-dev</strong>: This package is used to upload, build, and unpack Debian source packages. It is helpful if we wish to package our application for a Debian-based system.</li>
 </ul>
-<h4 id="prerequisites">Prerequisites </h4>
-<p>To succeed in this course, a basic understanding of programming concepts and the C language will be beneficial. If you're not, don't worry - I will provide resources to help you get up to speed.</p>
-<h4 id="instructor">Instructor </h4>
-<p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/images/Soulimane_MAMMAR_gray_3x4.jpg?raw=true" style="float:left; width:80px; height:auto; margin: 0 5px;"><strong>Soulimane Mammar</strong> is an Assistant Professor at the Polytechnic School of Oran, Algeria. With a career spanning since the year 2000, he has dedicated his expertise to the fields of system and network administration, cloud infrastructure, and security. Currently, he holds the position of lecturer in the Electrical Engineering department, where he imparts knowledge on subjects such as operating systems, discrete event systems, object-oriented programming for embedded systems, and industrial networks.</p>
+<p>To install the build-essential package type the following command</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> build-essential <span class="token parameter variable">-y</span>
+</code></pre><p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Linux/build_essential.png?raw=true" alt=""></p>
 
       </div>
       

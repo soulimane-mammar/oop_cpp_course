@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>course_overview</title>
+      <title>02-install_cmake</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -40,28 +40,44 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p>Welcome to <strong>Introduction to Object-Oriented Programming in C++ for Embedded Systems</strong> In this course, we will embark on a fascinating journey into the world of embedded systems, using the powerful and versatile C++ programming language as our primary tool.</p>
-<h4 id="why-object-oriented-programming">Why Object-Oriented Programming? </h4>
-<p>Embedded systems are the backbone of modern technology, found in everything from smartphones to  car's engine control units. They ensure that our devices and gadgets work seamlessly. Understanding how to design and program these systems is a vital skill for any aspiring engineer or programmer, and object-oriented programming (OOP) in C++ is an essential approach.</p>
-<h4 id="a-solid-foundation-in-c">A Solid Foundation in C++ </h4>
-<p>We'll start by building a strong foundation in C++, the language known for its performance, versatility, and rich ecosystem of libraries. You will learn how to write code that is both efficient and maintainable, setting the stage for designing embedded systems that meet the highest standards.</p>
-<h4 id="exploring-object-oriented-principles">Exploring Object-Oriented Principles </h4>
-<p>The heart of this course lies in exploring the principles of object-oriented programming. You will discover how to encapsulate data and functionality into objects, making your code more modular and easier to manage. We will delve into topics such as classes, objects, inheritance, polymorphism, and encapsulation, all crucial aspects of OOP.</p>
-<h4 id="applied-learning">Applied Learning </h4>
-<p>I believe that theory is only as valuable as its practical application. You'll have the opportunity to apply your newfound knowledge and explore how OOP concepts can be used to create efficient and reliable software for devices with limited resources.</p>
-<h4 id="target-audience">Target Audience </h4>
-<p>This course is designed for students in the field of embedded systems who want to expand their skillset and gain a deeper understanding of object-oriented programming in C++. No matter your level of programming expertise, you will discover valuable insights and encounter engaging challenges within this course.</p>
-<h4 id="key-takeaways">Key Takeaways </h4>
+<p>You can either install CMake by using the official installer or using a package manager like <code>MSYS2</code>,<br>
+which you used to install <code>GCC</code> and <code>Clang</code>.</p>
 <ul>
-<li>A strong foundation in C++ programming.</li>
-<li>Proficiency in object-oriented programming principles.</li>
-<li>Hands-on experience with developing embedded systems.</li>
-<li>The ability to design efficient and maintainable software for resource-constrained environments.</li>
+<li>
+<p>Using the installer:</p>
+<ol>
+<li>
+<p><a href="https://cmake.org/download/" target="_blank">Download here</a>, choose the <code>Windows win64-x64 Installer</code> option</p>
+</li>
+<li>
+<p>Launch the insatller, when you see this screen, choose <code>Add CMake to the system PATH for all users</code><br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/CMake_Installer.png?raw=true" alt=""><br>
+Now you finished installing cmake.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Using <code>MSYS2</code>:</p>
+<ol>
+<li>Run <code>MSYS2</code> and type this command and type <code>Y</code> to install</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-cmake
+</code></pre><ol start="2">
+<li>Search for <code>environment variable</code> and open it -&gt; <code>Environment Variables</code>, find <code>Path</code> in <code>System variables</code>, double click to open the setting -&gt; click <code>New</code> and copy <code>C:\msys64\usr\bin</code> to the new entry.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/SourceControl/Git.png?raw=true" alt=""></li>
+</ol>
+</li>
 </ul>
-<h4 id="prerequisites">Prerequisites </h4>
-<p>To succeed in this course, a basic understanding of programming concepts and the C language will be beneficial. If you're not, don't worry - I will provide resources to help you get up to speed.</p>
-<h4 id="instructor">Instructor </h4>
-<p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/images/Soulimane_MAMMAR_gray_3x4.jpg?raw=true" style="float:left; width:80px; height:auto; margin: 0 5px;"><strong>Soulimane Mammar</strong> is an Assistant Professor at the Polytechnic School of Oran, Algeria. With a career spanning since the year 2000, he has dedicated his expertise to the fields of system and network administration, cloud infrastructure, and security. Currently, he holds the position of lecturer in the Electrical Engineering department, where he imparts knowledge on subjects such as operating systems, discrete event systems, object-oriented programming for embedded systems, and industrial networks.</p>
+<p><a name="what-is-cmake-and-why" href=""></a></p>
+<h4 id="what-is-cmake-and-why">What is CMake and Why? </h4>
+<p>CMake is a cross-platform build-system generator, which generates build files (some files dictating how your source files should be built) for your platform.</p>
+<p>For example, on Windows by default, it generate <code>Visual Studio Solutions</code> (which is some files dicating how your source files should be built, native to <code>Visual Studio</code>) if you have Visual Studio installed. On Linux by default, it generates <code>Unix Makefiles</code> (which is some files dictating how your source files should be built, native to <code>make</code>).</p>
+<p>Note:</p>
+<blockquote>
+<p>It is a bug if your C/C++ project does NOT provide CMake support.</p>
+</blockquote>
+<hr>
+<p><a name="ides" href=""></a></p>
 
       </div>
       

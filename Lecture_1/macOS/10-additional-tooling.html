@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>course_overview</title>
+      <title>10-additional-tooling</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -40,28 +40,48 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p>Welcome to <strong>Introduction to Object-Oriented Programming in C++ for Embedded Systems</strong> In this course, we will embark on a fascinating journey into the world of embedded systems, using the powerful and versatile C++ programming language as our primary tool.</p>
-<h4 id="why-object-oriented-programming">Why Object-Oriented Programming? </h4>
-<p>Embedded systems are the backbone of modern technology, found in everything from smartphones to  car's engine control units. They ensure that our devices and gadgets work seamlessly. Understanding how to design and program these systems is a vital skill for any aspiring engineer or programmer, and object-oriented programming (OOP) in C++ is an essential approach.</p>
-<h4 id="a-solid-foundation-in-c">A Solid Foundation in C++ </h4>
-<p>We'll start by building a strong foundation in C++, the language known for its performance, versatility, and rich ecosystem of libraries. You will learn how to write code that is both efficient and maintainable, setting the stage for designing embedded systems that meet the highest standards.</p>
-<h4 id="exploring-object-oriented-principles">Exploring Object-Oriented Principles </h4>
-<p>The heart of this course lies in exploring the principles of object-oriented programming. You will discover how to encapsulate data and functionality into objects, making your code more modular and easier to manage. We will delve into topics such as classes, objects, inheritance, polymorphism, and encapsulation, all crucial aspects of OOP.</p>
-<h4 id="applied-learning">Applied Learning </h4>
-<p>I believe that theory is only as valuable as its practical application. You'll have the opportunity to apply your newfound knowledge and explore how OOP concepts can be used to create efficient and reliable software for devices with limited resources.</p>
-<h4 id="target-audience">Target Audience </h4>
-<p>This course is designed for students in the field of embedded systems who want to expand their skillset and gain a deeper understanding of object-oriented programming in C++. No matter your level of programming expertise, you will discover valuable insights and encounter engaging challenges within this course.</p>
-<h4 id="key-takeaways">Key Takeaways </h4>
+<p><a name="addtional-tooling" href=""></a></p>
+<p><a name="clangformat" href=""></a></p>
+<h4 id="clangformat">ClangFormat </h4>
+<p>Code formatting is an essential aspect of software development that ensures that the codebase is consistent, easy to read, and maintainable.<br>
+However, manually formatting code can be time-consuming and error-prone, especially for large projects. That's where automatic code formatting tools come in.<br>
+Clang-format is a powerful command-line tool for formatting C and C++ code. It can automatically format code according to a predefined set of rules or a custom configuration file.</p>
+<p><a name="installing-clang-format" href=""></a></p>
+<h5 id="installing-clang-format">Installing Clang-format </h5>
+<p>Before we can use Clang-format with VSCode, we need to install it on our system.</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>brew <span class="token function">install</span> clang-format
+</code></pre><p><a name="configuring-clang-format" href=""></a></p>
+<h5 id="configuring-clang-format">Configuring Clang-format </h5>
+<p>Clang-format can be configured using a variety of options, including</p>
 <ul>
-<li>A strong foundation in C++ programming.</li>
-<li>Proficiency in object-oriented programming principles.</li>
-<li>Hands-on experience with developing embedded systems.</li>
-<li>The ability to design efficient and maintainable software for resource-constrained environments.</li>
+<li>command-line arguments</li>
+<li>configuration files</li>
+<li>editor extensions.</li>
 </ul>
-<h4 id="prerequisites">Prerequisites </h4>
-<p>To succeed in this course, a basic understanding of programming concepts and the C language will be beneficial. If you're not, don't worry - I will provide resources to help you get up to speed.</p>
-<h4 id="instructor">Instructor </h4>
-<p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/images/Soulimane_MAMMAR_gray_3x4.jpg?raw=true" style="float:left; width:80px; height:auto; margin: 0 5px;"><strong>Soulimane Mammar</strong> is an Assistant Professor at the Polytechnic School of Oran, Algeria. With a career spanning since the year 2000, he has dedicated his expertise to the fields of system and network administration, cloud infrastructure, and security. Currently, he holds the position of lecturer in the Electrical Engineering department, where he imparts knowledge on subjects such as operating systems, discrete event systems, object-oriented programming for embedded systems, and industrial networks.</p>
+<p>We will focus on using a configuration file to customize the formatting rules.<br>
+A Clang-format configuration file is a text file that specifies the formatting options for Clang-format.<br>
+The file should be named .clang-format and placed in the root directory of your project.</p>
+<p>Here is an example configuration file:</p>
+<pre data-role="codeBlock" data-info="text" class="language-text text"><code>BasedOnStyle: Google
+IndentWidth: 4
+ColumnLimit: 120
+</code></pre><p>This configuration file specifies that the formatting style should be based on the Google C++ style guide, the indent width should be 4 spaces, and the column limit should be 120 characters.</p>
+<p>The Clang-format documentation provides a comprehensive list of options that can be used in the configuration file.<br>
+<a href="https://clang.llvm.org/docs/ClangFormatStyleOptions.html" target="_blank">https://clang.llvm.org/docs/ClangFormatStyleOptions.html</a></p>
+<p><a name="using-clang-format-with-vscode" href=""></a></p>
+<h5 id="using-clang-format-with-vscode">Using Clang-format with VSCode </h5>
+<p>ClangFormat is supported by VSCode C++ extension out-of-the-box.<br>
+ClangFormat settings can be found in C++ extension settings.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Tooling/ClangFormat/ClangFormat-vscode.png?raw=true" alt=""></p>
+<p><a name="cc-include-guard-proud-contributor" href=""></a></p>
+<h4 id="cc-include-guard-proud-contributor">C/C++ include guard (proud contributor) </h4>
+<p>is a <a href="#install-visual-studio-code">VSCode</a> extension that automatically add include guard for you so that you no longer need to remember it.<br>
+Download <a href="https://marketplace.visualstudio.com/items?itemName=akiramiyakoda.cppincludeguard" target="_blank">here</a>.</p>
+<p><a name="include-info-proud-maker" href=""></a></p>
+<h4 id="include-info-proud-maker">include-info (proud maker) </h4>
+<p>is a VSCode extension that shows the included header file size<br>
+and provide a fast way to jump to those included files.<br>
+Download <a href="https://marketplace.visualstudio.com/items?itemName=HO-COOH.include-info" target="_blank">here</a></p>
 
       </div>
       

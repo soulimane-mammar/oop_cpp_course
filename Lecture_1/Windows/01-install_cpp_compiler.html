@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>course_overview</title>
+      <title>01-install_cpp_compiler</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -40,28 +40,131 @@
     
       <div class="crossnote markdown-preview  ">
       
-<p>Welcome to <strong>Introduction to Object-Oriented Programming in C++ for Embedded Systems</strong> In this course, we will embark on a fascinating journey into the world of embedded systems, using the powerful and versatile C++ programming language as our primary tool.</p>
-<h4 id="why-object-oriented-programming">Why Object-Oriented Programming? </h4>
-<p>Embedded systems are the backbone of modern technology, found in everything from smartphones to  car's engine control units. They ensure that our devices and gadgets work seamlessly. Understanding how to design and program these systems is a vital skill for any aspiring engineer or programmer, and object-oriented programming (OOP) in C++ is an essential approach.</p>
-<h4 id="a-solid-foundation-in-c">A Solid Foundation in C++ </h4>
-<p>We'll start by building a strong foundation in C++, the language known for its performance, versatility, and rich ecosystem of libraries. You will learn how to write code that is both efficient and maintainable, setting the stage for designing embedded systems that meet the highest standards.</p>
-<h4 id="exploring-object-oriented-principles">Exploring Object-Oriented Principles </h4>
-<p>The heart of this course lies in exploring the principles of object-oriented programming. You will discover how to encapsulate data and functionality into objects, making your code more modular and easier to manage. We will delve into topics such as classes, objects, inheritance, polymorphism, and encapsulation, all crucial aspects of OOP.</p>
-<h4 id="applied-learning">Applied Learning </h4>
-<p>I believe that theory is only as valuable as its practical application. You'll have the opportunity to apply your newfound knowledge and explore how OOP concepts can be used to create efficient and reliable software for devices with limited resources.</p>
-<h4 id="target-audience">Target Audience </h4>
-<p>This course is designed for students in the field of embedded systems who want to expand their skillset and gain a deeper understanding of object-oriented programming in C++. No matter your level of programming expertise, you will discover valuable insights and encounter engaging challenges within this course.</p>
-<h4 id="key-takeaways">Key Takeaways </h4>
+<p>This section will cover the installation of <code>GCC</code>, <code>Clang</code> and <code>MSVC</code>.</p>
 <ul>
-<li>A strong foundation in C++ programming.</li>
-<li>Proficiency in object-oriented programming principles.</li>
-<li>Hands-on experience with developing embedded systems.</li>
-<li>The ability to design efficient and maintainable software for resource-constrained environments.</li>
+<li><a href="#gcc--clang">GCC &amp; Clang</a>
+<ul>
+<li><a href="#download--install-msys2">Download &amp; Install MSYS2</a></li>
+<li><a href="#install-gcc">Install GCC</a></li>
+<li><a href="#install-clang">Install Clang</a></li>
+<li><a href="#what-is-msys2-and-why">What is MSYS2 and Why?</a></li>
 </ul>
-<h4 id="prerequisites">Prerequisites </h4>
-<p>To succeed in this course, a basic understanding of programming concepts and the C language will be beneficial. If you're not, don't worry - I will provide resources to help you get up to speed.</p>
-<h4 id="instructor">Instructor </h4>
-<p><img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/images/Soulimane_MAMMAR_gray_3x4.jpg?raw=true" style="float:left; width:80px; height:auto; margin: 0 5px;"><strong>Soulimane Mammar</strong> is an Assistant Professor at the Polytechnic School of Oran, Algeria. With a career spanning since the year 2000, he has dedicated his expertise to the fields of system and network administration, cloud infrastructure, and security. Currently, he holds the position of lecturer in the Electrical Engineering department, where he imparts knowledge on subjects such as operating systems, discrete event systems, object-oriented programming for embedded systems, and industrial networks.</p>
+</li>
+<li><a href="#msvc">MSVC</a></li>
+</ul>
+<p><a name="gcc--clang" href=""></a></p>
+<h4 id="gcc--clang">GCC &amp; Clang </h4>
+<p><a name="download--install-msys2" href=""></a></p>
+<h5 id="download--install-msys2">Download &amp; Install MSYS2 </h5>
+<p><a href="https://www.msys2.org/" target="_blank">Download here</a></p>
+<p>Just launch the installer and keep clicking "Next"</p>
+<p><a name="install-gcc" href=""></a></p>
+<h5 id="install-gcc">Install GCC </h5>
+<p>If you also want to install <code>clang</code>, skip this part and go directly to <a href="#install-clang">Install Clang</a>, because GCC is a dependency of Clang (on MSYS2) and will be automatically installed when you install clang.</p>
+<ol>
+<li>Run MSYS2, type the following command:</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-Syu</span>
+</code></pre><p><code>pacman</code> is the package manager used by MSYS2. <code>-S</code> means "sync". <code>-y</code> means "download fresh package databases from the server". <code>-u</code> means "upgrade installed packages".</p>
+<p>This command will update the packages info, so you get the latest packages. It will prompt you like this, and you type <code>y</code> and hit enter.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/1.png?raw=true" alt=""></p>
+<ol>
+<li>Then it will prompt you <code>To complete this update all MSYS2 processes including this terminal will be closed. Confirm to proceed [Y/n]</code>, type <code>y</code> and hit enter, and it will close the window after the update is done.</li>
+<li>Relaunch MSYS2 from your start menu. Type:</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-gcc
+</code></pre><p>like this, type <code>y</code> and hit enter to install gcc<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/2.png?raw=true" alt=""></p>
+<p>And then type:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-make
+</code></pre><p>And type <code>y</code> to also install <code>make</code>.</p>
+<p>And then type:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-gdb
+</code></pre><p>And type <code>y</code> to also install <code>gdb</code>.</p>
+<ol start="5">
+<li>
+<p>Now search for <code>environment variable</code> and open it<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/3.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>Click <code>Environment Variables</code>, find <code>Path</code> in <code>System variables</code>, double click to open the setting.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/4.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>Click <code>New</code> and copy <code>C:\msys64\mingw64\bin</code> to the new entry.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/5.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>Click <code>OK</code> to close all windows. Now you finished installing GCC. Open any shell such as <code>cmd</code> and type in <code>gcc --version</code> and you shall see the following: <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/gcc/gcc-version.png?raw=true" alt=""></p>
+</li>
+</ol>
+<p><a name="install-clang" href=""></a></p>
+<h5 id="install-clang">Install Clang </h5>
+<p>Installing Clang will also automatically install <code>GCC</code> (on MSYS2).</p>
+<ol>
+<li>Run MSYS2, type the following command:</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-Syu</span>
+</code></pre><p><code>pacman</code> is the package manager used by MSYS2. <code>-S</code> means "sync". <code>-y</code> means "download fresh package databases from the server". <code>-u</code> means "upgrade installed packages".</p>
+<p>This command will update the packages info, so you get the latest packages. It will prompt you like this, and you type <code>y</code> and hit enter.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/1.png?raw=true" alt=""></p>
+<ol start="3">
+<li>
+<p>Then it will prompt you <code>To complete this update all MSYS2 processes including this terminal will be closed. Confirm to proceed [Y/n]</code>, type <code>y</code> and hit enter, and it will close the window after the update is done.</p>
+</li>
+<li>
+<p>Relaunch MSYS2 from your start menu. Type:</p>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-clang mingw-w64-x86_64-clang-tools-extra
+</code></pre><p>like this, type <code>y</code> and hit enter to install clang<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/clang/clang.png?raw=true" alt=""></p>
+<p>And then type:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-make
+</code></pre><p>And type <code>y</code> to also install <code>make</code>.</p>
+<p>And then type:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>pacman <span class="token parameter variable">-S</span> mingw-w64-x86_64-gdb
+</code></pre><p>And type <code>y</code> to also install <code>gdb</code>.</p>
+<ol start="5">
+<li>
+<p>Now search for <code>environment variable</code> and open it<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/3.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>Click <code>Environment Variables</code>, find <code>Path</code> in <code>System variables</code>, double click to open the setting.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/4.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>Click <code>New</code> and copy <code>C:\msys64\mingw64\bin</code> to the new entry.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSYS2/5.png?raw=true" alt=""></p>
+</li>
+<li>
+<p>Click <code>OK</code> to close all windows. Now you finished installing clang. Open any shell such as <code>cmd</code> and type in <code>clang --version</code> and you shall see the following: <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/clang/clang-version.png?raw=true" alt=""></p>
+</li>
+</ol>
+<p>Note: <code>Clang</code> and <code>GCC</code> is installed to the same directory, eg. under <code>C:\msys64\mingw64\bin</code>. Don't be confused by the directory <code>C:\msys64\clang64</code>. It is an empty folder.</p>
+<p><a name="what-is-msys2-and-why" href=""></a></p>
+<h5 id="what-is-msys2-and-why">What is MSYS2 and Why? </h5>
+<blockquote>
+<p>MSYS2 is a collection of tools and libraries providing you with an easy-to-use environment for building, installing and running native Windows software.</p>
+</blockquote>
+<p>But basically, we use its implementation of MingW(Minimalist GNU for Windows), which is a collection of common developing tools seen on GNU/Linux operating systems.</p>
+<p><a name="msvc" href=""></a></p>
+<h4 id="msvc">MSVC </h4>
+<p>MSVC is Microsoft Visual C++ compiler. And you do NOT have to install Visual Studio in order to get MSVC. However, if you also want Visual Studio, skip to <a href="#setting-up-visual-studio">setting up visual studio</a> directly.</p>
+<ol>
+<li>Download <a href="https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019" target="_blank">MSVC</a>, select <code>Build Tools for Visual Studio 2019</code></li>
+<li>Launch the installer and select these workflows<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSVC/Installer.png?raw=true" alt=""></li>
+<li>You have finished installing MSVC. Click <code>Launch</code> and type <code>cl</code> and you should see this:<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSVC/InstallFinish.png?raw=true" alt=""></li>
+</ol>
+<p>Do NOT try to add <code>MSVC</code> directly to system <code>PATH</code> because each compiler toolchain for different architecture has its own version.</p>
+<p>This command prompt is specific to 64bit Windows architecture and has set some temporary environment variables. You can find it in <code>Start</code> -&gt; <code>Visual Studio 2019</code> -&gt; <code>Developer Command Prompt for VS 2019</code> like this: <img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSVC/Location.png?raw=true" alt=""></p>
+<p>After MSVC is installed, cmake can detect it as a compiler.<br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSVC/Cmake_VSCode.png?raw=true" alt=""><br>
+<img src="https://github.com/soulimane-mammar/oop_cpp_course/blob/main/screenshots/Compiler/MSVC/Cmake_Clion.png?raw=true" alt=""></p>
+<p><a name="download--install-cmake" href=""></a></p>
 
       </div>
       

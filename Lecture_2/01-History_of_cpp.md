@@ -1,7 +1,3 @@
-<a name="history-of-c"></a>
-
-# History of C++
-
 In 1980, Bjarne Stroustrup, a Danish Computer Scientist employed at AT&T Bell Labs in Murray Hill, New Jersey, developed  C++, a programming language that incorporated elements from C and Simula67 while also embracing Object Oriented Programming (OOP). Initially, the language was named "C with Classes" because Stroustrup's primary goal was to leverage classes for the implementation of OOP characteristics.
 
 In 1983, Bjarne Stroustrup released "The C++ Programming Language," which marked the birth of the C++ language as we know it today. It introduced the name "C++" and included the first version of the language with features like classes, inheritance, and operator overloading.
