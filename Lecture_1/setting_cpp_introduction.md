@@ -6,4 +6,4 @@ C++'s installation instructions vary by operating system. Follow the guide for t
 
 <a href="">Setting up C/C++ developement environment on Windows</a>
 <a href="">Setting up C/C++ developement environment on Linux</a>
-<a href="">Setting up C/C++ developement environment on Windows</a>
+<a href="">Setting up C/C++ developement environment on macOS</a>

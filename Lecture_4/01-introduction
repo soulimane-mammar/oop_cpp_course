@@ -1,0 +1,9 @@
+[//]: # (### Introduction)
+
+Variables help a programmer temporarily store data for a finite amount of time. Constants help a programmer define artifacts that are not allowed to change or make changes.
+
+In this lesson, you find out
+• How to declare and define variables and constants
+• How to assign values to variables and manipulate those values
+• How to write the value of a variable to the screen
+• How to use the keywords auto and constexpr
