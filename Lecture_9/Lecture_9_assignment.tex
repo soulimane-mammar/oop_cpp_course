@@ -1,0 +1,45 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Soulimane Mammar}
+\title{Assignment \#4}
+\begin{document}
+	\maketitle
+	
+	\section*{Exercise 1}
+	Write a function\\
+	\verb|void sort2(double* p, double* p)|
+	that receives two pointers and sorts the values to which they point. If you call\\
+	\verb|sort2(&x, &y)|\\
+	then \verb|x <= y| after the call.
+	
+	\section*{Exercise 2}
+	Write a function \\
+	\verb|double replace_if_greater(double* p, double x)|\\
+	that replaces the value to which \verb|p| points with \verb|x| if \verb|x| is greater. Return the old value to which \verb|p| pointed.
+	
+	\section*{Exercise 3}
+	Write a function that computes the average value of an array of floating-point data:\\
+	\verb|double average(double* a, int size)|\\
+	In the function, use a pointer variable, not an integer index, to traverse the array
+	elements.
+	
+	\section*{Exercise 4}
+	Write a function that returns a pointer to the maximum value of an array of floating-point data:\\
+	\verb|double* maximum(double* a, int size)|\\
+	If size is 0, return \verb|nullptr|.
+	
+	\section*{Exercise 5}
+	Implement the strncpy function of the standard library.
+	
+	\section*{Exercise 6}
+	Redo Exercise 1 using references (ie \verb|void sort2(double& p double& p)|)
+	
+	\section*{Exercise 7}
+	Write a function \verb|index| that takes two parameters: an array of doubles and an index
+	so we can use it as follows:\\
+	\verb|index(a,3) = 5.0|
+\end{document}
