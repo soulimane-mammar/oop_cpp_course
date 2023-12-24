@@ -1,0 +1,44 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\geometry{top=1cm, left=2cm, top=2cm, bottom=2cm}
+\title{Assignment \#6}
+\author{Soulimane Mammar}
+\begin{document}
+	\maketitle
+    \section*{Exercise 1}
+    Implement a base class \verb|Person|. Derive classes \verb|Student| and \verb|Instructor| from \verb|Person|.A person has a name and a birthday. A student has a major, and an instructor has a salary. Write the class definitions, the constructors, and the member functions \verb|display| for all classes.
+    
+    \section*{Exercise 2}
+    Design an inheritance hierarchy for geometric shapes: rectangles, squares, and
+    circles. Provide appropriate constructors for each class. Write the class definitions and implementations of the member functions.
+    
+    \section*{Exercise 3}
+    \begin{enumerate}
+    	\item The class \verb|D2| inherits from the class \verb|D1|, which inherits from the class \verb|Base|. To keep \verb|D2| from accessing the public members in \verb|Base|, what access specifier would you use, and where would you use it?
+    	\item What is the nature of inheritance with this code snippet? Would your answer be different if Derived were a struct instead?
+    	\begin{verbatim}
+    	class Derived: Base
+    	{
+    	    // ... Derived members
+    	};	
+    	\end{verbatim}
+    	\item What is the problem in this code?
+    	\begin{verbatim}
+    	class Derived: public Base
+    	{
+    	    // ... Derived members
+    	};
+    	void SomeFunc (Base value)
+    	{
+    	    // ...
+    	}
+    	\end{verbatim}
+    \end{enumerate}
+    
+\end{document}
