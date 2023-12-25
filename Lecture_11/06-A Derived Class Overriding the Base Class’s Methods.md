@@ -1,6 +1,6 @@
 [//]: # (### A Derived Class Overriding the Base Class’s Methods)
 
-If the class Derived implements the same functions with the same return values and signatures as in the class Base from which it inherits, it effectively overrides that method in the class Base, as shown in the following code:
+If the class `Derived` implements the same functions with the same return values and signatures as in the class `Base` from which it inherits, it effectively overrides that method in the class `Base`, as shown in the following code:
 
 ```cpp
 class Base {

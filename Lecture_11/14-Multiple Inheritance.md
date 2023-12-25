@@ -10,7 +10,7 @@ class Derived: access-specifier Base1, access-specifier Base2
 ```
 
 The class diagram for the `Platypus` class, is illustrated by figure below
-![Platypus Class](platypus.png)
+![Platypus Class](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/Lecture_11/platypus.png?raw=true)
 
 Thus, the C++ representation of the class Platypus is as follows:
 

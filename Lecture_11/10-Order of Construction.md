@@ -1,6 +1,6 @@
 [//]: # (### Order of Construction and Destruction)
 
-## Order of Construction
+#### Order of Construction
 
 The order of construction is crucial when dealing with inheritance and class hierarchies. Here's a summary:
 
@@ -35,7 +35,7 @@ public:
 
 In this scenario, the order of construction would be: `Base` constructor, `obj1`, `obj2`, and finally, the `Derived` constructor body.
 
-## Order of Destruction
+#### Order of Destruction
 
 [//]: # (### Order of Destruction)
 
@@ -70,7 +70,7 @@ public:
 
 In this scenario, during destruction, the order would be: `obj2`, `obj1`, `Derived` class destructor, and finally, `Base` class destructor.
 
-## Example
+#### Example
 
 ```cpp
 #include <iostream>
