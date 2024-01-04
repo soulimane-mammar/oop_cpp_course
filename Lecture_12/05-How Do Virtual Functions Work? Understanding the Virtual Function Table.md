@@ -70,7 +70,7 @@ Objects of classes Base and Derived get pointers to VFTs for Base and Derived.
 
 A VFT can be visualized as a static array containing function pointers, each pointing to the virtual function (or override) of interest, as illustrated in the following figure
 
-![VFT](vft.png)
+![VFT](https://github.com/soulimane-mammar/oop_cpp_course/blob/main/Lecture_12/vft.png?raw=true)
 
 the compiler ensures a lookup in the VFT  and ensures that the proper implementation is invoked.
 
